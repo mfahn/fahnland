@@ -1,7 +1,7 @@
 export const EssayMenuItems = [
     {
         title: 'Porn',
-        path: '/porns-effect-on-relationships',
+        path: '/porns',
         cName: 'dropdown-link'
     }
 ];

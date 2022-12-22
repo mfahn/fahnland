@@ -8,21 +8,19 @@ function ReligionDropdown() {
     const handleClick = () => setClick(!click);
 
     return (
-        <>
-            <ul onClick={handleClick} className={click ? 'religion-dropdown-menu clicked' : 'religion-dropdown-menu'}>
-                {ReligionMenuItems.map((item,index) => {
-                    return (
-                        <li class="bg-bg-gray text-dark hover:text-midTeal text-lg" key={index}>
-                            <Link
-                            className={item.cName} 
-                            to={item.path} 
-                            onClick={() => setClick(false)}
-                            >{item.title}</Link>
-                        </li>
-                    );
-                })}
-            </ul>
-        </>
+<ul onClick={handleClick} className={click ? 'religion-dropdown-menu clicked' : 'religion-dropdown-menu'}>
+    {ReligionMenuItems.map((item,index) => {
+        return (
+            <li class="bg-bg-gray text-dark hover:text-midTeal text-lg" key={index}>
+                <Link
+                className={item.cName} 
+                to={item.path} 
+                onClick={() => setClick(false)}
+                >{item.title}</Link>
+            </li>
+        );
+    })}
+</ul>
     );
 }
     

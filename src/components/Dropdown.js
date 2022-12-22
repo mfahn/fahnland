@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { MenuItems } from './MenuItems.js';
+import { MenuItems } from './MenuItems';
 import { Link } from 'react-router-dom';
 
 function Dropdown() {
@@ -8,21 +8,19 @@ function Dropdown() {
     const handleClick = () => setClick(!click);
 
     return (
-        <>
-            <ul onClick={handleClick} className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}>
-                {MenuItems.map((item,index) => {
-                    return (
-                        <li class="bg-bg-gray text-dark hover:text-midTeal" key={index}>
-                            <Link 
-                            className={item.cName} 
-                            to={item.path} 
-                            onClick={() => setClick(false)}
-                            >{item.title}</Link>
-                        </li>
-                    );
-                })}
-            </ul>
-        </>
+<ul onClick={handleClick} className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}>
+    {MenuItems.map((item,index) => {
+        return (
+            <li class="bg-bg-gray text-dark hover:text-midTeal" key={index}>
+                <Link 
+                className={item.cName} 
+                to={item.path} 
+                onClick={() => setClick(false)}
+                >{item.title}</Link>
+            </li>
+        );
+    })}
+</ul>
     );
 }
 

@@ -13,6 +13,7 @@ import { GrClose } from "react-icons/gr"
 function NavBar() {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
+    const [navigation, setNavigation] = useState(false);
     const [campDropdown, setCampDropdown] = useState(false);
     const [checklistDropdown, setChecklistDropdown] = useState(false);
     const [essayDropdown, setEssayDropdown] = useState(false);
@@ -96,6 +97,14 @@ function NavBar() {
 
     const closeMobileMenu = () => setClick(false);
 
+    const mobileMenu = () => {
+        if(window.innerWidth < 960){
+            setNavigation(false);
+        } else{
+            setNavigation(true);
+        }
+    }
+
     return (
         <>
 <nav className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto'>
@@ -106,27 +115,27 @@ function NavBar() {
         </li>
 
         <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu}>
-            <button className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></button>
+            <Link className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></Link>
             {campDropdown && <CampDropdown />}
         </li>
 
         <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
-            <button className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></button>
+            <Link className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></Link>
             {checklistDropdown && <ChecklistDropdown />}
         </li>
 
         <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
-            <button className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></button>
+            <Link className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></Link>
             {essayDropdown && <EssayDropdown />}
         </li>
 
         <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
-            <button className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></button>
+            <Link className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></Link>
             {projectDropdown && <ProjectDropdown />}
         </li>
 
         <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onReligionMouseEnter} onMouseLeave={onReligionMouseLeave} onClick={closeMobileMenu}>
-            <button className='nav-links'>Religion<BsFillCaretDownFill class='inline-block'/></button>
+            <Link className='nav-links'>Religion<BsFillCaretDownFill class='inline-block'/></Link>
             {religionDropdown && <ReligionDropdown />}
         </li>
 
