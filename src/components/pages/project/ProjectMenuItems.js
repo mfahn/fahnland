@@ -1,12 +1,12 @@
 export const ProjectMenuItems = [
     {
         title: 'Server',
-        path: '/Server',
-        cName: 'dropdown-link'
+        path: '/projects/Server',
+        cName: 'projectDropdown-link'
     },
     {
         title: 'Incident Response',
-        path: '/Incident-Response',
-        cName: 'dropdown-link'
+        path: '/projects/Incident-Response',
+        cName: 'projectDropdown-link'
     }
 ];

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../App.css';
-import { CampMenuItems } from './CampMenuItems.js';
+import { CampMenuItems } from './CampMenuItems';
 import { Link } from 'react-router-dom';
 
 function CampDropdown() {

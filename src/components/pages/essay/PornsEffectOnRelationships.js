@@ -12,4 +12,4 @@ function Porn(){
         </div>
     );
 }
-export default Porn
+export default Porn;

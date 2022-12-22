@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Camp(){
+function Minnesota(){
     return(
     <div>
         <ul id="slider" class="w-1/5">
@@ -12,4 +12,4 @@ function Camp(){
     </div>
     );
 }
-export default Camp;
+export default Minnesota;

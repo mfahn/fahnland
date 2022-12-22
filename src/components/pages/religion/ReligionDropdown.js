@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../App.css';
-import { ReligionMenuItems } from './ReligionMenuItems.js';
+import { ReligionMenuItems } from './ReligionMenuItems';
 import { Link } from 'react-router-dom';
 
 function ReligionDropdown() {
@@ -12,7 +12,7 @@ function ReligionDropdown() {
             <ul onClick={handleClick} className={click ? 'religion-dropdown-menu clicked' : 'religion-dropdown-menu'}>
                 {ReligionMenuItems.map((item,index) => {
                     return (
-                        <li class="bg-bg-gray text-dark hover:text-midTeal" key={index}>
+                        <li class="bg-bg-gray text-dark hover:text-midTeal text-lg" key={index}>
                             <Link
                             className={item.cName} 
                             to={item.path} 

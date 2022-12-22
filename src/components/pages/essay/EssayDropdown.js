@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../App.css';
-import { EssayMenuItems } from './EssayMenuItems.js';
+import { EssayMenuItems } from './EssayMenuItems';
 import { Link } from 'react-router-dom';
 
 function EssayDropdown() {

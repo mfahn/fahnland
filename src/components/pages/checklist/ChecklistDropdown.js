@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../../../App.css';
-import { ChecklistMenuItems } from './ChecklistMenuItems.js';
+import { ChecklistMenuItems } from './ChecklistMenuItems';
 import { Link } from 'react-router-dom';
 
 function ChecklistDropdown() {
