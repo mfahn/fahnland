@@ -1,12 +1,12 @@
 export const CampMenuItems = [
     {
         title: 'Glacier',
-        path: '/Glacier',
+        path: '/camp/Glacier',
         cName: 'dropdown-link'
     },
     {
         title: 'Woodland Carribou',
-        path: '/Woodlad-Carribou',
+        path: '/camp/Woodlad-Carribou',
         cName: 'dropdown-link'
     },
 ];

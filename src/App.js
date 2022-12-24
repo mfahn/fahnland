@@ -26,7 +26,6 @@ function App() {
     <Route Path='/religion' component={Religion} />
     <Route Path='/projects/Incident-Response' component={IncidentResponse} />
   </Routes>
-  <Home />
 </Router>
     );
 }
