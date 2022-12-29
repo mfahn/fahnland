@@ -1,7 +1,7 @@
 export const CampMenuItems = [
     {
         title: 'Glacier',
-        path: '/camp/Glacier',
+        path: '/Glacier',
         cName: 'dropdown-link'
     },
     {

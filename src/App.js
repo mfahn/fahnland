@@ -18,17 +18,20 @@ function App() {
 <Router>
   <NavBar />
   <Routes>
-    <Route Path='/' exact component={Home}/>
-    <Route Path='/camp/glacier' component={Glacier} />
-    <Route Path='/camp/Minnesota' component={Minnesota} />
-    <Route Path='/checklist/WindowsChecklist' component={WindowsChecklist} />
-    <Route Path='/checklist/LinuxChecklist' component={LinuxChecklist} />
-    <Route Path='/projects/server' component={Server} />
-    <Route Path='/essays/porn' component={Porn} />
-    <Route Path='/religion' component={Religion} />
-    <Route Path='/projects/Incident-Response' component={IncidentResponse} />
+    <Route Path='/' exact element={<Home />} />
+    <Route Path='/glacier' element={<Glacier />} />
+    <Route Path='/camp/Minnesota' element={<Minnesota />} />
+    <Route Path='/checklist/WindowsChecklist' element={<WindowsChecklist />} />
+    <Route Path='/checklist/LinuxChecklist' element={<LinuxChecklist />} />
+    <Route Path='/projects/server' element={<Server />} />
+    <Route Path='/essays/porn' element={<Porn />} />
+    <Route Path='/religion' element={<Religion />} />
+    <Route Path='/projects/Incident-Response' element={<IncidentResponse />} />
   </Routes>
 </Router>
+<hr />
+
+<Outlet />
 </>
     );
 }
