@@ -659,6 +659,10 @@ video {
   width: 75%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .w-3\/5 {
   width: 60%;
 }

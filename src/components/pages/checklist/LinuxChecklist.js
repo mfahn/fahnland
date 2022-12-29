@@ -4,7 +4,7 @@ function LinuxChecklist(){
     return(
         <div>
             <div>
-                <h1></h1>
+                <h1>Linux Checklist</h1>
             </div>
             <div>
                 <p>Generic *nix Checklist

@@ -1,6 +1,7 @@
-import Home from './components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { React } from 'react';
+import './App.css';
+import Home from './components/Home';
 import NavBar from './components/NavBar';
 import Minnesota from './components/pages/camp/Minnesota';
 import WindowsChecklist from './components/pages/checklist/WindowsChecklist';
@@ -13,6 +14,7 @@ import Porn from './components/pages/essay/PornsEffectOnRelationships';
 
 function App() {
   return (
+<>
 <Router>
   <NavBar />
   <Routes>
@@ -27,6 +29,7 @@ function App() {
     <Route Path='/projects/Incident-Response' component={IncidentResponse} />
   </Routes>
 </Router>
+</>
     );
 }
 

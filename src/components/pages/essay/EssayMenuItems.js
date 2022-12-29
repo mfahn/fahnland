@@ -1,7 +1,7 @@
 export const EssayMenuItems = [
     {
         title: 'Porn',
-        path: '/porns',
+        path: '/essays/porn',
         cName: 'dropdown-link'
     }
 ];
