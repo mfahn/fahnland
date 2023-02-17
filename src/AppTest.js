@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Switch } from 'react-router-dom';
 import { React } from 'react';
 import './App.css';
 import Home from './components/Home';
@@ -11,14 +11,13 @@ import Server from './components/pages/project/Server';
 import Religion from './components/pages/religion/Religion';
 import Glacier from './components/pages/camp/Glacier';
 import Porn from './components/pages/essay/PornsEffectOnRelationships';
-import NotFound from './components/NotFound';
 
 function App() {
   return (
 <>
 <Router>
   <NavBar />
-  <Routes>
+  <Switch>
     <Route Path='/' exact element={<Home />} />
     <Route Path='/camp/glacier' element={<Glacier />} />
     <Route Path='/camp/Minnesota' element={<Minnesota />} />
@@ -28,8 +27,7 @@ function App() {
     <Route Path='/essays/porn' element={<Porn />} />
     <Route Path='/religion' element={<Religion />} />
     <Route Path='/projects/Incident-Response' element={<IncidentResponse />} />
-    <Route Path='/error' element={<NotFound />} />
-  </Routes>
+  </Switch>
 </Router>
 <hr />
 </>

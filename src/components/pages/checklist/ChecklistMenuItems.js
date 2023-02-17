@@ -6,7 +6,7 @@ export const ChecklistMenuItems = [
     },
     {
         title: 'Windows Checklist',
-        path: '/checklist/Windows-Checklist',
+        path: '/checklist/WindowsChecklist',
         cName: 'dropdown-link'
     },
 ];

@@ -107,46 +107,50 @@ function NavBar() {
 
     return (
 <div>
-<nav className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto'>
+<nav className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-3/4'>
     <ul class="items-center text-center w-auto " className={click ? 'nav-menu active' : 'nav-menu'}>
 
-        <li class="inline clear hover:bg-bg-gray ml-2 mr-2 p-2" onClick={closeMobileMenu}>
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" onClick={closeMobileMenu}>
             <Link to='/' className='navbar-home'>Home</Link>
         </li>
 
-        <li class="inline clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Camping<BsFillCaretDownFill class='inline'/></Link>
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu}>
+            <Link className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></Link>
             {campDropdown && <CampDropdown />}
         </li>
 
-        <li class="inline clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Checklists<BsFillCaretDownFill class='inline'/></Link>
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
+            <Link className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></Link>
             {checklistDropdown && <ChecklistDropdown />}
         </li>
 
-        <li class="inline clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Essays<BsFillCaretDownFill class='inline'/></Link>
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
+            <Link className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></Link>
             {essayDropdown && <EssayDropdown />}
         </li>
 
-        <li class="inline clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Projects<BsFillCaretDownFill class='inline'/></Link>
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
+            <Link className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></Link>
             {projectDropdown && <ProjectDropdown />}
         </li>
 
-        <li class="inline clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onReligionMouseEnter} onMouseLeave={onReligionMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Religion<BsFillCaretDownFill class='inline'/></Link>
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onReligionMouseEnter} onMouseLeave={onReligionMouseLeave} onClick={closeMobileMenu}>
+            <Link className='nav-links'>Religion<BsFillCaretDownFill class='inline-block'/></Link>
             {religionDropdown && <ReligionDropdown />}
         </li>
 
-        <li class="dark:inline ml-2 mr-2 p-2">
+        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <Link to="/religion">Religion<BsFillCaretDownFill class='inline-block'/></Link>
+        </li>
+
+        <li class="dark:inline-block ml-2 mr-2 p-2">
             <BsMoonStarsFill />
         </li>
         <li class="dark:hidden ml-2 mr-2 p-2">
             <BsFillSunFill/>
         </li>
 
-        <li class="inline ml-2 mr-2 p-2" onClick={handleClick}>
+        <li class="inline-block ml-2 mr-2 p-2" onClick={handleClick}>
             <GiHamburgerMenu />
         </li>
     </ul>

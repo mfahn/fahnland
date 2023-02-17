@@ -833,6 +833,10 @@ video {
   outline-offset: 2px;
 }
 
+.dark .dark\:inline-block {
+  display: inline-block;
+}
+
 .dark .dark\:inline {
   display: inline;
 }
