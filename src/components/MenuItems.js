@@ -2,20 +2,20 @@ export const MenuItems = [
     {
         title: 'Essays',
         path: '/essays',
-        cName: 'dropdown-link'
+        cName: 'essay-dropdown-link'
     },
     {
         title: 'Traveling',
         path: '/traveling',
-        cName: 'dropdown-link'
+        cName: 'travel-dropdown-link'
     },
     {        title: 'Checklists',
         path: '/checklists',
-        cName: 'dropdown-link'
+        cName: 'checklist-dropdown-link'
     },
     {
         title: 'Religion',
         path: '/religion',
-        cName: 'dropdown-link'
+        cName: 'religion-dropdown-link'
     },
 ];

@@ -2,11 +2,11 @@ export const ChecklistMenuItems = [
     {
         title: 'Linux Checklist',
         path: '/checklist/LinuxChecklist',
-        cName: 'dropdown-link'
+        cName: 'checklist-dropdown-link'
     },
     {
         title: 'Windows Checklist',
         path: '/checklist/WindowsChecklist',
-        cName: 'dropdown-link'
+        cName: 'checklist-dropdown-link'
     },
 ];
