@@ -9,7 +9,8 @@ export const MenuItems = [
         path: '/traveling',
         cName: 'travel-dropdown-link'
     },
-    {        title: 'Checklists',
+    {        
+        title: 'Checklists',
         path: '/checklists',
         cName: 'checklist-dropdown-link'
     },

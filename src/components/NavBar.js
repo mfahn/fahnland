@@ -106,59 +106,66 @@ function NavBar() {
     }
 
     return (
-<div>
-<nav className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-3/4'>
-    <ul class="items-center text-center w-auto " className={click ? 'nav-menu active' : 'nav-menu'}>
+<div className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-3/4'>
+    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" onClick={closeMobileMenu}>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li  onClick={closeMobileMenu}>
             <Link to='/' className='navbar-home'>Home</Link>
         </li>
+        </div>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu}>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu}>
             <Link className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></Link>
             {campDropdown && <CampDropdown />}
         </li>
+        </div>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
             <Link className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></Link>
             {checklistDropdown && <ChecklistDropdown />}
         </li>
+        </div>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
             <Link className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></Link>
             {essayDropdown && <EssayDropdown />}
         </li>
+        </div>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></Link>
-            {projectDropdown && <ProjectDropdown />}
-        </li>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
+                <Link className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></Link>
+                {projectDropdown && <ProjectDropdown />}
+            </li>
+        </div>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2" className='nav-item' onMouseEnter={onReligionMouseEnter} onMouseLeave={onReligionMouseLeave} onClick={closeMobileMenu}>
-            <Link className='nav-links'>Religion<BsFillCaretDownFill class='inline-block'/></Link>
-            {religionDropdown && <ReligionDropdown />}
-        </li>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li className='nav-item' onMouseEnter={onReligionMouseEnter} onMouseLeave={onReligionMouseLeave} onClick={closeMobileMenu}>
+                <Link className='nav-links'>Religion<BsFillCaretDownFill class='inline-block'/></Link>
+                {religionDropdown && <ReligionDropdown />}
+            </li>
+        </div>
 
-        <li class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
-            <Link to="/religion">Religion<BsFillCaretDownFill class='inline-block'/></Link>
-        </li>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li class="dark:inline-block ml-2 mr-2 p-2"><BsMoonStarsFill /></li>
+        </div>
 
-        <li class="dark:inline-block ml-2 mr-2 p-2">
-            <BsMoonStarsFill />
-        </li>
-        <li class="dark:hidden ml-2 mr-2 p-2">
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li class="dark:hidden ml-2 mr-2 p-2">
             <BsFillSunFill/>
         </li>
+        </div>
 
-        <li class="inline-block ml-2 mr-2 p-2" onClick={handleClick}>
+        <div class="inline-block clear hover:bg-bg-gray ml-2 mr-2 p-2">
+            <li class="inline-block ml-2 mr-2 p-2" onClick={handleClick}>
             <GiHamburgerMenu />
         </li>
+        </div>
     </ul>
-</nav>
-<hr />
-
-<Outlet />
-
 </div>
     );
 }

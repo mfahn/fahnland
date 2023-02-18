@@ -3,7 +3,7 @@ import '../../../App.css'
 
 function Server() {
     return (
-        <div>
+        <div class="m-1">
             <div>
                 Proxmox
                 https://tteck.github.io/Proxmox/
