@@ -8,10 +8,11 @@ function ChecklistDropdown() {
     const handleClick = () => setClick(!click);
 
     return (
-<ul onClick={handleClick} className={click ? 'checklist-dropdown-menu clicked' : 'checklist-dropdown-menu'}  class="hover:bg-bg-gray ml-2 mr-2 p-2 fixed">
+<div class="fixed">
+<ul onClick={handleClick} className={click ? 'checklist-dropdown-menu clicked' : 'checklist-dropdown-menu'}>
     {ChecklistMenuItems.map((item,index) => {
         return (
-            <li class="bg-bg-gray text-dark hover:text-midTeal text-lg" key={index}>
+            <li class="bg-bg-gray text-dark hover:text-midTeal text-lg p-1" key={index}>
                 <Link 
                 className={item.cName} 
                 to={item.path} 
@@ -21,6 +22,7 @@ function ChecklistDropdown() {
         );
     })}
 </ul>
+</div>
     );
 }
 

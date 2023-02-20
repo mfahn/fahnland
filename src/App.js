@@ -15,42 +15,9 @@ import NotFound from './components/NotFound';
 import Footer from './components/Footer';
 
 function App() {
-  let component
-  switch(window.location.pathname){
-    case "/":
-      component = <Home />
-      break
-    case "/camp/glacier":
-      component = <Glacier />
-      break
-    case "/camp/Minnesota":
-      component = <Minnesota />
-      break
-    case "/checklist/WindowsChecklist":
-      component = <WindowsChecklist />
-      break
-    case "/checklist/LinuxChecklist":
-      component = <LinuxChecklist />
-      break
-    case "/projects/server":
-      component = <Server />
-      break
-    case "/essays/porn":
-      component = <Porn />
-      break
-    case "/religion":
-      component = <Religion />
-      break
-    case "/projects/Incident-Response":
-      component = <IncidentResponse />
-      break
-    default:
-      component = <NotFound />
-        break
-  }
 
   return (
-<>
+<React.StrictMode>
 <Router>
   <NavBar />
   <Routes>
@@ -66,9 +33,8 @@ function App() {
     <Route Path='*' element={<NotFound />} />
   </Routes>
 </Router>
-{component}
 <Footer />
-</>
+</React.StrictMode>
     );
 }
 

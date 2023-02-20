@@ -6,7 +6,7 @@ export const CampMenuItems = [
     },
     {
         title: 'Woodland Carribou',
-        path: '/camp/WoodladCarribou',
+        path: '/camp/WoodlandCarribou',
         cName: 'travel-dropdown-link'
     },
 ];
