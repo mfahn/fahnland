@@ -8,7 +8,7 @@ function CampDropdown() {
     const handleClick = () => setClick(!click);
 
     return (
-<ul onClick={handleClick} className={click ? 'camp-dropdown-menu clicked' : 'camp-dropdown-menu'}>
+<ul onClick={handleClick} className={click ? 'camp-dropdown-menu clicked' : 'camp-dropdown-menu'}  class="hover:bg-bg-gray ml-2 mr-2 p-2 fixed">
     {CampMenuItems.map((item,index) => {
         return (
             <li class="bg-bg-gray text-dark hover:text-midTeal text-lg" key={index}>

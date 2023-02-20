@@ -8,10 +8,11 @@ function ProjectDropdown() {
     const handleClick = () => setClick(!click);
 
     return (
+<div class="fixed">
 <ul onClick={handleClick} className={click ? 'project-dropdown-menu clicked' : 'project-dropdown-menu'}>
     {ProjectMenuItems.map((item,index) => {
         return (
-            <li class="bg-bg-gray text-dark hover:text-midTeal text-lg -z-20" key={index}>
+            <li class="bg-bg-gray text-dark hover:text-midTeal text-base p-1" key={index}>
                 <Link 
                 className={item.cName} 
                 to={item.path} 
@@ -21,6 +22,7 @@ function ProjectDropdown() {
         );
     })}
 </ul>
+</div>
     );
 }
 

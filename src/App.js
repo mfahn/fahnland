@@ -54,8 +54,8 @@ function App() {
 <Router>
   <NavBar />
   <Routes>
-    <Route Path='/' exact element={<Home />} />
-    <Route Path='/camp/glacier' element={<Glacier />} />
+    <Route Path='/' index exact element={<Home />} />
+    <Route Path='/camp/glacier' exact element={<Glacier />} />
     <Route Path='/camp/Minnesota' element={<Minnesota />} />
     <Route Path='/checklist/WindowsChecklist' element={<WindowsChecklist />} />
     <Route Path='/checklist/LinuxChecklist' element={<LinuxChecklist />} />
@@ -63,7 +63,7 @@ function App() {
     <Route Path='/essays/porn' element={<Porn />} />
     <Route Path='/religion' element={<Religion />} />
     <Route Path='/projects/Incident-Response' element={<IncidentResponse />} />
-    <Route Path='/error' element={<NotFound />} />
+    <Route Path='*' element={<NotFound />} />
   </Routes>
 </Router>
 {component}

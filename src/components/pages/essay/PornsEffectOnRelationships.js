@@ -2,7 +2,7 @@ import React from 'react';
 
 function Porn(){
     return(
-        <div>
+        <div class="mt-5 m-auto p-5 w-3/5 text-dark bg-bg-gray rounded-lg text-center">
             <div>
                 <h1>Preface</h1>
             </div>

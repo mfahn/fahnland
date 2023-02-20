@@ -2,12 +2,12 @@ import React from 'react';
 
 function WindowsChecklist(){
     return(
-        <div>
-            <div>Windows Checklist</div>
+        <div class="mt-5 m-auto p-5 w-3/5 text-dark bg-bg-gray rounded-lg text-center">
+            <h1>Windows Checklist</h1>
 
-            <div>FW</div>
+            <h2>FW</h2>
             <div>netsh advfirewall set allprofiles firewallpolicy allowinbound,blockoutbound</div>
-            <div>
+            <ul>
                 1.	Turn on Windows Firewall
                 a.	Start Menu -{'>'}Windows Defender Firewall with Advanced Security
                 b.	Click “Windows Defender Firewall Properties” in the center pane
@@ -28,10 +28,10 @@ function WindowsChecklist(){
                 4.	Windows Firewall (GPO)
                 a.	Gpmc.msc 
                 5.	Computer Configuration {'>'}Policies {'>'}Windows Settings {'>'}Security Settings {'>'}Windows Defender Firewall
-            </div>
+            </ul>
 
-            <div>Passwords</div>
-            <div>
+            <h2>Passwords</h2>
+            <ul>
                 Set passwords for all user accounts
                 a.	Open a shell (ONLY Powershell)
                 b.	Local - Type as follows - probably will work
@@ -87,10 +87,10 @@ function WindowsChecklist(){
                 11.	Rename built-in admin account
                 a.	Start -{'>'}Computer Management -{'>'}Local users and Groups  -{'>'}Users
                 b.	Right-click and rename Administrator
-            </div>
+            </ul>
 
-            <div>Services</div>
-            <div>
+            <h2>Services</h2>
+            <ul>
                 Get Windows Version
                 Winver 
 
@@ -127,10 +127,10 @@ function WindowsChecklist(){
                 b.	Run netstat, make sure you don't have any unneeded ports open
 
                 14.	Check Startup Programs
-            </div>
+            </ul>
 
-                <div>Software</div>
-                <div>            
+                <h3>Software</h3>
+                <ol>            
                     15.	Patch Critical Vulnerabilities
                     a.	For XP, 2000 and 2003 patch MS08_067
                     b.	For Vista and 2008 patch 
@@ -139,17 +139,17 @@ function WindowsChecklist(){
                     i.	Eternal Blue and BlueKeep
                     d.	Server Windows XP, 2003, 2008
                     i.	Critical patch: MS08_067 - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2008/ms08-067
-                </div>
+                </ol>
 
-            <div>Monitoring</div>
+            <h2>Monitoring</h2>
             <div>
                 netstat -noab 1   
                     show all processes that have connections and 1 loops it
                 taskkill -F /pid (process ID)            
             </div>
 
-            <div>Active Directory</div>
-            <div>
+            <h2>Active Directory</h2>
+            <p>
                 16.	Set Policies  - Active Directory - Add Group Policy Object MMC - Only for DCs
                 a.	XPassword Policies
                 i.	Min Length - 14
@@ -170,10 +170,10 @@ function WindowsChecklist(){
                 Password Policy & Account Lockout (GPO - Default Domain Policy)
                 Computer Configuration {'>'}Policies {'>'}Windows Settings {'>'}Security Settings {'>'}Account Policies
                     Be careful with lockout policies. Red teams can DoS admin accounts.
-            </div>
+            </p>
 
-            <div>Third Party Tools</div>
-            <div>
+            <h3>Third Party Tools</h3>
+            <ul>
                 18.	Download tools (and place them in a shared folder)
                 a.	Comodo Cleaning Essentials
                 i.	http://bit.ly/2FAyftZ 
@@ -199,7 +199,7 @@ function WindowsChecklist(){
                 d.	Check Task Manager
                 e.	Check msconfig
                 f.	Check “C:\Windows\Temp”
-            </div>
+            </ul>
 
     Enable AD Powershell Module
     Import-Module ActiveDirectory

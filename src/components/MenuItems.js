@@ -14,9 +14,4 @@ export const MenuItems = [
         path: '/checklists',
         cName: 'checklist-dropdown-link'
     },
-    {
-        title: 'Religion',
-        path: '/religion',
-        cName: 'religion-dropdown-link'
-    },
 ];
