@@ -5,6 +5,12 @@ if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.match
     document.documentElement.classList.remove('dark')
 }
 
+let colorScheme = "system";
+if (colorScheme === "system") {
+let media = window.matchMedia("(prefers-color-scheme: dark)")
+if (media.matches) document.documentElement.classList.add("dark");
+}
+
 function toggle(){
     if(localStorage.theme){
         // Whenever the user explicitly chooses light mode

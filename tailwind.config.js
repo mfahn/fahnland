@@ -1,4 +1,5 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
+const path = require("path");
 
 module.exports = {
   mode:'jit',
@@ -41,4 +42,10 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-}
+  webpack: {
+    headers: {
+      'X-Frame-Options': 'Deny',
+      'X-Content-Type-Options': 'nosniff'
+    },
+  },
+};
