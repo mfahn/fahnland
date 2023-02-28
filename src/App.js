@@ -13,27 +13,29 @@ import Glacier from './components/pages/camp/Glacier';
 import Porn from './components/pages/essay/PornsEffectOnRelationships';
 import NotFound from './components/NotFound';
 import Footer from './components/Footer';
+import WoodlandCarribou from './components/pages/camp/WoodlandCarribou';
 
 function App() {
 
   return (
 <React.StrictMode>
-<Router>
-  <NavBar />
-  <Routes>
-    <Route Path='/' index exact element={<Home />} />
-    <Route Path='/camp/glacier' exact element={<Glacier />} />
-    <Route Path='/camp/Minnesota' element={<Minnesota />} />
-    <Route Path='/checklist/WindowsChecklist' element={<WindowsChecklist />} />
-    <Route Path='/checklist/LinuxChecklist' element={<LinuxChecklist />} />
-    <Route Path='/projects/server' element={<Server />} />
-    <Route Path='/essays/porn' element={<Porn />} />
-    <Route Path='/religion' element={<Religion />} />
-    <Route Path='/projects/Incident-Response' element={<IncidentResponse />} />
-    <Route Path='*' element={<NotFound />} />
-  </Routes>
-</Router>
-<Footer />
+  <Router>
+    <NavBar />
+    <Routes>
+      <Route path='/' index exact element={<Home />} />
+      <Route path='/camp/glacier' exact element={<Glacier />} />
+      <Route path='/camp/woodlandcarribou' exact element={<WoodlandCarribou />} />
+      <Route path='/camp/Minnesota' element={<Minnesota />} />
+      <Route path='/checklist/WindowsChecklist' element={<WindowsChecklist />} />
+      <Route path='/checklist/LinuxChecklist' element={<LinuxChecklist />} />
+      <Route path='/projects/server' element={<Server />} />
+      <Route path='/essays/porn' element={<Porn />} />
+      <Route path='/religion' element={<Religion />} />
+      <Route path='/projects/Incident-Response' element={<IncidentResponse />} />
+      <Route element={<NotFound />} />
+    </Routes>
+  </Router>
+  <Footer />
 </React.StrictMode>
     );
 }

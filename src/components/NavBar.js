@@ -99,28 +99,28 @@ function NavBar() {
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2">
             <div className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu}>
-                <Link className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></Link>
+                <div className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></div>
                 {campDropdown && <CampDropdown />}
             </div>
         </div>
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2">
             <div className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
-                <Link className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></Link>
+                <div className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></div>
                 {checklistDropdown && <ChecklistDropdown />}
             </div>
         </div>
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2">
             <div className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
-                <Link className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></Link>
+                <div className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></div>
                 {essayDropdown && <EssayDropdown />}
             </div>
         </div>
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2">
             <div className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
-                <Link className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></Link>
+                <div className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></div>
                 {projectDropdown && <ProjectDropdown />}
             </div>
         </div>
@@ -130,15 +130,15 @@ function NavBar() {
         </div>
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2 dark:inline-block">
-            <div><BsMoonStarsFill /></div>
+            <div><BsMoonStarsFill size={25}/></div>
         </div>
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2 dark:hidden">
-            <div><BsFillSunFill/></div>
+            <div><BsFillSunFill size={25}/></div>
         </div>
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2">
-            <div onClick={handleClick}><GiHamburgerMenu /></div>
+            <div onClick={handleClick}><GiHamburgerMenu size={25}/></div>
         </div>
     </div>
 </div>

@@ -1,13 +1,19 @@
 import React from 'react';
-import '../../../App.css'
+import '../../../App.css';
+import lab from '../../images/server/HomeLab.png';
 
 function Server() {
-    return (
-        <div class="mt-5 m-auto p-5 w-3/5 text-dark bg-bg-gray rounded-lg text-center">
-            <div>
+return (
+  <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
+    <div class="text-dark text-lg">
+      <h1>Home Lab</h1>
+    </div>
+    <div class="ml-auto mr-auto text-center">
+      <img class="" src={lab}></img>
+    </div>
                 Proxmox
                 https://tteck.github.io/Proxmox/
-
+              
 sudo nano /etc/netplan/00-netplan.yaml
 
 network:
@@ -29,7 +35,6 @@ sudo netplan apply
 ip a
 
             </div>
-        </div>
     );
 }
 
