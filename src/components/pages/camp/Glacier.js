@@ -11,11 +11,11 @@ function Glacier(){
 <div class='mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center'>
     <div><h1>Glacier National Park</h1></div>
     <div class='w-3/5 ml-auto mr-auto'>
-        <img src={lake} title="Lake"></img>
-        <img src={spot} title="Cool Spot"></img>
-        <img src={mountainPeakLake} title="Mountain Peak"></img>
-        <img src={waterfall} title="Waterfall"></img>
-        <img src={windingRiver} title="River"></img>
+        <img src={lake} alt="" title="Lake"></img>
+        <img src={spot} alt="" title="Cool Spot"></img>
+        <img src={mountainPeakLake} alt="" title="Mountain Peak"></img>
+        <img src={waterfall} alt="" title="Waterfall"></img>
+        <img src={windingRiver} alt="" title="River"></img>
     </div>
     <div>
         <h4>My friends and I planned a backpacking trip to Glacier National Park. This was an outstanding trip full of once in a lifetime views. The best water in the world comes from melting snow in the mountains. Swimming in that water will also give you the shock of your life, especially if you stand under a waterfall of it.</h4>

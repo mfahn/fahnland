@@ -9,7 +9,7 @@ return (
       <h1>Home Lab</h1>
     </div>
     <div class="ml-auto mr-auto text-center">
-      <img class="" src={lab}></img>
+      <img class="" alt='' src={lab}></img>
     </div>
                 Proxmox
                 https://tteck.github.io/Proxmox/

@@ -41,14 +41,17 @@ function LinuxChecklist(){
         <li>Check /etc/group, especially sudo (getent group sudo) and nopasswdlogin</li>
 
         Backdoors and Persistence
-        <li>Disable cron or any system scheduling service</li>
-        <li>systemctl mask cron; systemctl stop cron</li>
-        <li>Remove unnecessary timers and running services</li>
-        <li>systemctl list-timers; systemctl list-units -t service</li>
-        <li>Check for malicious alias commands (alias -p)</li>
-        <li>Check /var/spool/cron/crontabs for individual tabs and /etc/cron* for new scripts</li>
-        <li>Check listening and established connections (sudo ss -plunt)</li>
-        <li>Check process list (ps auxf) especially by root (| grep root)</li>
+        <ul>
+            <li>Disable cron or any system scheduling service</li>
+            <li>systemctl mask cron; systemctl stop cron</li>
+            <li>Remove unnecessary timers and running services</li>
+            <li>systemctl list-timers; systemctl list-units -t service</li>
+            <li>Check for malicious alias commands (alias -p)</li>
+            <li>Check /var/spool/cron/crontabs for individual tabs and /etc/cron* for new scripts</li>
+            <li>Check listening and established connections (sudo ss -plunt)</li>
+            <li>Check process list (ps auxf) especially by root (| grep root)</li>  
+        </ul>
+
 
         4. Local Backup
             mkdir /root/bak

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import '../App.css';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CampDropdown from './pages/camp/CampDropdown';
 import ChecklistDropdown from './pages/checklist/ChecklistDropdown';
 import EssayDropdown from './pages/essay/EssayDropdown';
 import ProjectDropdown from './pages/project/ProjectDropdown';
 import { GiHamburgerMenu } from "react-icons/gi";
-import { BsFillCaretDownFill, BsFillCaretUpFill, BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-import { GrClose } from "react-icons/gr";
+import { BsFillCaretDownFill, /*BsFillCaretUpFill,*/ BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+//import { GrClose } from "react-icons/gr";
 
 function NavBar() {
     const [click, setClick] = useState(false);

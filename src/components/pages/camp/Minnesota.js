@@ -9,10 +9,10 @@ function Minnesota(){
     return(
 <div>
     <div id="slider" class="w-1/5">
-        <img src={sunset} title="Sunset"></img>
-        <img src={stream} title="Stream"></img>
-        <img src={storm} title="Storm"></img>
-        <img src={sunrise} title="Sunrise"></img>
+        <img src={sunset} alt="" title="Sunset"></img>
+        <img src={stream} alt="" title="Stream"></img>
+        <img src={storm} alt="" title="Storm"></img>
+        <img src={sunrise} alt="" title="Sunrise"></img>
     </div>
     <div>
         <h4>My family and I camped and hiked in Medora, South Dakota. All photos on are taken on my phone camera. It's not a trick of your imagination, South Dakota and Minnesota are just that beautiful.</h4>
