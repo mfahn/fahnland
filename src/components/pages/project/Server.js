@@ -4,7 +4,7 @@ import lab from '../../images/server/HomeLab.png';
 
 function Server() {
 return (
-  <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
     <div class="text-dark text-lg">
       <h1>Home Lab</h1>
     </div>

@@ -7,7 +7,7 @@ import sunrise from '../../images/camp/sunrise.jpg';
 
 function Minnesota(){
     return(
-<div>
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
     <div id="slider" class="w-1/5">
         <img src={sunset} alt="" title="Sunset"></img>
         <img src={stream} alt="" title="Stream"></img>

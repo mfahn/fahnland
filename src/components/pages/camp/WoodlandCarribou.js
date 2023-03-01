@@ -8,7 +8,7 @@ import sunset from '../../images/woodland-carribou/sunset.jpg';
 
 function WoodlandCarribou(){
     return(
-<div class='mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center'>
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
     <div>
         <h1>Woodland Carribou</h1>
     </div>

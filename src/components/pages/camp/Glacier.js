@@ -8,7 +8,7 @@ import windingRiver from '../../images/glacier/windingRiver.jpg';
 
 function Glacier(){
     return(
-<div class='mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center'>
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
     <div><h1>Glacier National Park</h1></div>
     <div class='w-3/5 ml-auto mr-auto'>
         <img src={lake} alt="" title="Lake"></img>

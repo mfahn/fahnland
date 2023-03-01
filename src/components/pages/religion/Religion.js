@@ -19,13 +19,13 @@ function Religion() {
     <div class="ring-dark p-2 ml-1 mr-1 ">
         <a class="hover:ring-lowTeal hover:text-lowTeal text-lg dark:{'ring', 'ring-lowTeal', 'hover:ring-midTeal', 'hover:text-teal'}" href="http://www.miracolieucaristici.org/en/Liste/list.html">Index of Eucharistic Miracles</a>
         <div class="text-sm">
-            This is the most comprehensive list of Eucharistic Miracles ever, compiled by a 21st century web developer who battled cancer but used his talents to serve God. He has been declared Blessed by the Catholic Church which is the last step before being declared a saint.
+            This is the most comprehensive list of Eucharistic Miracles ever, compiled by Blessed Carlos Acutis. He has been declared Blessed by the Catholic Church which is the last step before being declared a saint.
         </div>
     </div>
     <div class="ring-dark p-2 ml-1 mr-1 ">
         <a class="hover:ring-lowTeal hover:text-lowTeal text-lg dark:{'ring', 'ring-lowTeal', 'hover:ring-midTeal', 'hover:text-teal'}" href="http://www.carloacutis.com/en/association/presentazione">Blessed Carlos Acutis</a>
         <div class="text-sm">
-            This link goes to a website the tells the story of the life of Blessed Carlos Acutis, his battle with cancer, and his life's work of bringing years of miracles into a globally accessible medium.
+            This link tells the story of the life of Blessed Carlos Acutis, a 21st century web developer who battled cancer as a teenager but used his talents to serve God during his short life.  and his life's work of bringing years of miracles into a globally accessible medium.
         </div>
     </div>
 </div>
