@@ -32,7 +32,7 @@ function App() {
       <Route path='/essays/porn' element={<Porn />} />
       <Route path='/religion' element={<Religion />} />
       <Route path='/projects/Incident-Response' element={<IncidentResponse />} />
-      <Route element={<NotFound />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   </Router>
   <Footer />

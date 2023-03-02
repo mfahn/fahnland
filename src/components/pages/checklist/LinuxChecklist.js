@@ -6,7 +6,7 @@ function LinuxChecklist(){
     <div>
         <h1>Linux Checklist</h1>
     </div>
-    <div class="mt-5 m-auto p-5 w-3/5 text-dark bg-bg-gray rounded-lg text-center">
+    <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
         <p>Generic *nix Checklist
         Your guide to peace and success
         -This doesn{'’'}t have to be exact order, however it is close to what you want to do-

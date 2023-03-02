@@ -4,8 +4,8 @@ import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 function Footer() {
     return (
-<div class="mt-5 mb-5 ml-auto mr-auto p-5 w-1/4 text-dark bg-bg-gray rounded-lg text-center">
-    <div>
+<div class="mt-5 mb-5 ml-auto mr-auto p-5 w-2/5 text-dark bg-bg-gray rounded-lg text-center">
+    <div class="text-dark">
         Glory to God in all things
     </div>
     <div class="text-lowTeal inline-block mt-3">

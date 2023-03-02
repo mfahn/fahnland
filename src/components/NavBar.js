@@ -5,14 +5,11 @@ import CampDropdown from './pages/camp/CampDropdown';
 import ChecklistDropdown from './pages/checklist/ChecklistDropdown';
 import EssayDropdown from './pages/essay/EssayDropdown';
 import ProjectDropdown from './pages/project/ProjectDropdown';
-import { GiHamburgerMenu } from "react-icons/gi";
-import { BsFillCaretDownFill, /*BsFillCaretUpFill,*/ BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-//import { GrClose } from "react-icons/gr";
+import { BsFillCaretDownFill, BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
 
 function NavBar() {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click);
-    const [navigation, setNavigation] = useState(false);
     const [campDropdown, setCampDropdown] = useState(false);
     const [checklistDropdown, setChecklistDropdown] = useState(false);
     const [essayDropdown, setEssayDropdown] = useState(false);
@@ -80,14 +77,6 @@ function NavBar() {
 
     const closeMobileMenu = () => setClick(false);
 
-    const mobileMenu = () => {
-        if(window.innerWidth < 960){
-            setNavigation(false);
-        } else{
-            setNavigation(true);
-        }
-    }
-
     return (
 <>
 <div className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-3/4'>
@@ -135,10 +124,6 @@ function NavBar() {
 
         <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2 dark:hidden">
             <div><BsFillSunFill size={25}/></div>
-        </div>
-
-        <div class="inline-block hover:bg-bg-gray ml-1 mr-1 p-2">
-            <div onClick={handleClick}><GiHamburgerMenu size={25}/></div>
         </div>
     </div>
 </div>

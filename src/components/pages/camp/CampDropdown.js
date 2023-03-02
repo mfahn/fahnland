@@ -9,7 +9,7 @@ function CampDropdown() {
     <ul>
         {CampMenuItems.map((item,index) => {
             return (
-                <li class="bg-bg-gray text-dark hover:text-midTeal text-lg" key={index}>
+                <li class="bg-bg-gray text-dark hover:text-midTeal text-lg p-1" key={index}>
                     <Link className={item.cName} to={item.path}>{item.title}</Link>
                 </li>
             );
