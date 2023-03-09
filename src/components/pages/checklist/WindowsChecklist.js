@@ -2,10 +2,11 @@ import React from 'react';
 
 function WindowsChecklist(){
     return(
-<><div class="mt-5 ml-auto mr-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg">
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
     <div class="w-4/5 text-center ml-auto mr-auto">
     <h1>Windows Checklist</h1>
 
+<div>
     <h2>FW</h2>
     <ol>
         <li><h2>Turn on Windows Firewall</h2></li>
@@ -38,7 +39,9 @@ function WindowsChecklist(){
         <div>	Gpmc.msc </div>
         <div>Computer Configuration {'>'}Policies {'>'}Windows Settings {'>'}Security Settings {'>'}Windows Defender Firewall</div>
     </ol>
+</div>
 
+<div>
     <h1>Passwords</h1>
     <div>
         Set passwords for all user accounts
@@ -97,8 +100,10 @@ function WindowsChecklist(){
         <div>Start -{'>'}Computer Management -{'>'}Local users and Groups  -{'>'}Users</div>
         <div>	Right-click and rename Administrator</div>
     </div>
+</div>
 
-    <div>Services</div>
+<div>
+    <h1>Services</h1>
     <div>
         Get Windows Version
         Winver 
@@ -137,27 +142,31 @@ function WindowsChecklist(){
 
         14.	Check Startup Programs
     </div>
+</div>
 
-        <h3>Software</h3>
-        <div>            
-            15.	Patch Critical Vulnerabilities
-            <div>	For XP, 2000 and 2003 patch MS08_067</div>
-            <div>	For Vista and 2008 patch </div>
-            i.	MS09_050 - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2009/ms09-050
-            c.	For Windows Server 2012, 2016, Windows 7, 8, 10
-            i.	Eternal Blue and BlueKeep
-            d.	Server Windows XP, 2003, 2008
-            i.	Critical patch: MS08_067 - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2008/ms08-067
-        </div>
+<div>
+    <h3>Software</h3>
+    <div>            
+        15.	Patch Critical Vulnerabilities
+        <div>	For XP, 2000 and 2003 patch MS08_067</div>
+        <div>	For Vista and 2008 patch </div>
+        i.	MS09_050 - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2009/ms09-050
+        c.	For Windows Server 2012, 2016, Windows 7, 8, 10
+        i.	Eternal Blue and BlueKeep
+        d.	Server Windows XP, 2003, 2008
+        i.	Critical patch: MS08_067 - https://learn.microsoft.com/en-us/security-updates/SecurityBulletins/2008/ms08-067
+    </div>    
+</div>
 
-    <div>Monitoring</div>
+
+    <h1>Monitoring</h1>
     <div>
         netstat -noab 1   
             show all processes that have connections and 1 loops it
         taskkill -F /pid (process ID)            
     </div>
 
-    <div>Active Directory</div>
+    <h1>Active Directory</h1>
     <p>
         16.	Set Policies  - Active Directory - Add Group Policy Object MMC - Only for DCs
         <div>	XPassword Policies</div>
@@ -261,7 +270,6 @@ Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Par
 
 </div>
 </div>
-</>
     );
 };
 export default WindowsChecklist;

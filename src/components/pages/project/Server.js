@@ -4,8 +4,8 @@ import lab from '../../images/server/HomeLab.png';
 
 function Server() {
 return (
-<div class="mt-5 ml-auto mr-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center">
-  <h1 class="text-dark text-lg">Proxmox Home Lab</h1>
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
+  <h1 class="text-dark text-lg dark:text-bg-gray font-bold">Proxmox Home Lab</h1>
 
   <p class="w-4/5 ml-auto mr-auto">
     Earlier this year, I bought a server off of Amazon with the intention of building a home lab. Over the course of this semester, I have built out a webserver, reverse engineering lab, and security tool environment where I have set up a Wazuh server to collect logs from endpoints. I have learned a ton through this project. I use Zero-Tier to remotely access my server and system firewalls with Fail2Ban to protect public-facing services. This Github repository has proven extremely valuable for setting up the Proxmox instance, including making a dark mode, adding certain packages, and disabling annoying warning notifications: 
