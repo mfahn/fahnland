@@ -7,41 +7,46 @@ function LinuxChecklist(){
         <h1 class="font-bold">Linux Checklist</h1>
     </div>
     <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
-        <p>Generic *nix Checklist
-        Your guide to peace and success
-        -This doesn{'’'}t have to be exact order, however it is close to what you want to do-
+        <p>In Collegiate Cyber Defense Competitions (CCDC), a team of defenders must protect a network from the intrusions of an active red team. They must simultaneously secure their systems and keep scored services like websites and databases online. During the competition, simulated employers will bring business tasks to the team of defenders who must carry out the business instructions. This is a generic *nix Checklist to guide those defensive efforts.
+        </p>
 
-        1. Initial state
-            ps -auxf {'>'} /root/ps.list
-            lsmod {'>'} mod.list
-            cat /etc/passwd {'>'} users.list
-        2. Root
-        <li>passwd</li>
-        ○	Change root password
-        <li>Restrict sudoers (visudo OR vi /etc/sudoers)</li>
-        ○	Remove all but (root ALL=(ALL:ALL)) ALL), keep Defaults (for now)
-        ○	Remove #includes
-        3. Change System Passwords (write as script & delete pass from script after use)
-            #!/bin/sh
+        <h1 class="text-lg font-bold">Capture Initial State of the Machine</h1>
+        <ol>
+            <li class="text-left">ps -auxf {'>'} /root/ps.list</li>
+            <li>lsmod {'>'} mod.list</li>
+            <li>cat /etc/passwd {'>'} users.list</li>
+        </ol>
+
+        <h1 class="text-lg font-bold">Handle Root</h1>
+        <p>Root is the most powerful basic user on a Linux computer and needs to be secured as soon as possible to prevent attackers from abusing its privileges</p>
+        <p>passwd</p>
+        <p>Change root password</p>
+        <p>Restrict sudoers (sudo nano /etc/sudoers)</p>
+        <p>Remove all but (root ALL=(ALL:ALL)) ALL), keep Defaults (for now)</p>
+        Remove #includes
+        <p>Change System Passwords (write as script & delete pass from script after use)</p>
+        <p>    #!/bin/sh
             read -p : pass
         users=$(getent passwd | grep -v root | cut -d ":" -f 1)
         for user in $users; do
         echo “$user:$pass” | chpasswd
         echo “$user,$pass” {'>>'} {'<'}pwListName{'>'}.csv
         done
-        Users
-        <li>Remove authentication backdoors</li>
-        <li>Check sudoers file (sudo visudo) and /etc/sudoers.d (remove #include)</li>
-        <li>Check pam_exec, malicious pam rules</li>
-        <li>Check user status (passwd -Sa), ensure all system accounts are locked</li>
-        <li>Lock root account (passwd -l root)</li>
-        <li>Audit users (use GUI, and getent passwd)</li>
-        <li>Ensure /etc/passwd has no hidden or UID 0 users, and no system /bin/.*sh shells</li>
-        <li>Secure groups.</li>
-        <li>Check /etc/group, especially sudo (getent group sudo) and nopasswdlogin</li>
-
-        Backdoors and Persistence
-        <ul>
+        </p>
+        <h1>Users</h1>
+        <ol>
+            <li>Remove authentication backdoors</li>
+            <li>Check sudoers file (sudo visudo) and /etc/sudoers.d (remove #include)</li>
+            <li>Check pam_exec, malicious pam rules</li>
+            <li>Check user status (passwd -Sa), ensure all system accounts are locked</li>
+            <li>Lock root account (passwd -l root)</li>
+            <li>Audit users (use GUI, and getent passwd)</li>
+            <li>Ensure /etc/passwd has no hidden or UID 0 users, and no system /bin/.*sh shells</li>
+            <li>Secure groups.</li>
+            <li>Check /etc/group, especially sudo (getent group sudo) and nopasswdlogin</li>
+        </ol>
+        <h1>Backdoors and Persistence</h1>
+        <ol>
             <li>Disable cron or any system scheduling service</li>
             <li>systemctl mask cron; systemctl stop cron</li>
             <li>Remove unnecessary timers and running services</li>
@@ -50,20 +55,20 @@ function LinuxChecklist(){
             <li>Check /var/spool/cron/crontabs for individual tabs and /etc/cron* for new scripts</li>
             <li>Check listening and established connections (sudo ss -plunt)</li>
             <li>Check process list (ps auxf) especially by root (| grep root)</li>  
-        </ul>
+        </ol>
 
 
-        4. Local Backup
-            mkdir /root/bak
-            cp -r /etc /root/bak
-            cp -r /home /root/bak
-            # Copy any other directories required by your services (see application checklists)
-        5. Change Application Passwords (see application checklists)
+        <h1>Local Backup</h1>
+        <ol>
+            <li>mkdir /root/bak</li>
+            <li>cp -r /etc /root/bak</li>
+            <li>cp -r /home /root/bak</li>
+            <li>Copy any other directories required by your services (see application checklists)</li>
+        </ol>
+
+        <h1>Change Application Passwords (see application checklists)</h1>
         Firewall
-            Box 1: SSH, IMAP
-            Box 2: HTTP, SSH (using Box 3 for MySQL)
-            Box 3: MySQL used by Box 2
-
+        <p>
             #!/bin/sh
             # Common
             alias add=”iptables -A”
@@ -73,100 +78,99 @@ function LinuxChecklist(){
 
             iptables -F
             iptables -X
-        add INPUT -i lo acc
-        add OUTPUT -o lo acc
-        add INPUT -m state --state RELATED,ESTABLISHED acc
-        add OUTPUT -m state --state RELATED,ESTABLISHED acc
+            add INPUT -i lo acc
+            add OUTPUT -o lo acc
+            add INPUT -m state --state RELATED,ESTABLISHED acc
+            add OUTPUT -m state --state RELATED,ESTABLISHED acc
 
             add INPUT -p tcp --dport 22 -s {'<'}control computer{'>'} acc
-            iptables -P FORWARD DROP
+            iptables -P FORWARD DROP     
+        </p>
 
-        # Custom Inbound rules
-                # Ex. fwgroups
-                22:110,113
-                80:110
-                3306:109
+        <p>
+            #!/bin/sh
+            for line in $(cat fwgroups); do
+                port=$(echo $line | cut -d “:” -f 1)
+                host=$(echo $line | cut -d “:” -f 2)
+                pdsh -R ssh -w 192.168.1.[$host] iptables -A INPUT -p tcp --dport $port
+            done
+            pdsh -R ssh -w 192.168.1.[1-255] iptables -P INPUT DROP            
+        </p>
 
-                #!/bin/sh
-                for line in $(cat fwgroups); do
-                    port=$(echo $line | cut -d “:” -f 1)
-                    host=$(echo $line | cut -d “:” -f 2)
-                    pdsh -R ssh -w 192.168.1.[$host] iptables -A INPUT -p tcp --dport $port
-                done
-                pdsh -R ssh -w 192.168.1.[1-255] iptables -P INPUT DROP
+        <h1>SSH</h1>
+        <p>/etc/ssh/sshd_config</p>
+        <ol>
+            <li>PermitRootLogin no</li>
+            <li>PermitEmptyPasswords no</li>
+            <li>PubkeyAuthentication no</li>
+            <li>PasswordAuthentication no # undo if ssh shows as down</li>
+            <li>PermitUserEnvironment no</li>
+            <li>PrintLastLog no</li>
+            <li>Protocol 2</li>
+            <li>LogLevel VERBOSE</li>
+            <li>X11Forwarding no</li>
+            <li>AllowTcpForwarding no</li>
+            <li>MaxAuthTries 4</li>
+            <li>MaxStartups 2</li>
+            <li>IgnoreRhosts yes</li>
+            <li>HostbasedAuthentication no</li>
+            <li>ClientAliveInterval 300</li>
+            <li>ClientAliveCountMax 0</li>
+            <li>LoginGraceTime 60</li>
+            <li>StrictModes yes</li>
+            <li>Banner /etc/issue.net</li>
+            <li>AuthorizedKeysFile %h/.ssh/authorized_keys</li>            
+        </ol>
 
-            # Configure Custom Outbound rules on a per/box basis?
-        SSH
-        sshd  
-        /etc/ssh/sshd_config
-        <li>PermitRootLogin no</li>
-        <li>PermitEmptyPasswords no</li>
-        <li>PubkeyAuthentication no</li>
-        <li>PasswordAuthentication no # undo if ssh shows as down</li>
-        <li>PermitUserEnvironment no</li>
-        <li>PrintLastLog no</li>
-        <li>Protocol 2</li>
-        <li>LogLevel VERBOSE</li>
-        <li>X11Forwarding no</li>
-        <li>AllowTcpForwarding no</li>
-        <li>MaxAuthTries 4</li>
-        <li>MaxStartups 2</li>
-        <li>IgnoreRhosts yes</li>
-        <li>HostbasedAuthentication no</li>
-        <li>ClientAliveInterval 300</li>
-        <li>ClientAliveCountMax 0</li>
-        <li>LoginGraceTime 60</li>
-        <li>StrictModes yes</li>
-        <li>Banner /etc/issue.net</li>
-        <li>AuthorizedKeysFile %h/.ssh/authorized_keys</li>
 
-        HostKey /etc/ssh/ssh_host_rsa_key
-        HostKey /etc/ssh/ssh_host_dsa_key
-        HostKey /etc/ssh/ssh_host_ecdsa_key
-        HostKey /etc/ssh/ssh_host_ed25519_key
-        UsePrivilegeSeparation yes
+        <p>
+            HostKey /etc/ssh/ssh_host_rsa_key
+            HostKey /etc/ssh/ssh_host_dsa_key
+            HostKey /etc/ssh/ssh_host_ecdsa_key
+            HostKey /etc/ssh/ssh_host_ed25519_key
+            UsePrivilegeSeparation yes
 
-        KeyRegenerationInterval 3600
-        ServerKeyBits 1024
+            KeyRegenerationInterval 3600
+            ServerKeyBits 1024
 
-        SyslogFacility AUTH
-        LogLevel INFO
+            SyslogFacility AUTH
+            LogLevel INFO
 
-        LoginGraceTime 120
-        PermitRootLogin no
-        StrictModes yes
-        MaxAuthTries 3
+            LoginGraceTime 120
+            PermitRootLogin no
+            StrictModes yes
+            MaxAuthTries 3
 
-        RSAAuthentication yes
-        # if positive that public keys are not needed, set to no
-        PubkeyAuthentication yes
+            RSAAuthentication yes
+            # if positive that public keys are not needed, set to no
+            PubkeyAuthentication yes
 
-        IgnoreRhosts yes
-        RhostsRSAAuthentication no
-        HostbasedAuthentication no
+            IgnoreRhosts yes
+            RhostsRSAAuthentication no
+            HostbasedAuthentication no
 
-        PermitEmptyPasswords no
+            PermitEmptyPasswords no
 
-        ChallengeResponseAuthentication no
+            ChallengeResponseAuthentication no
 
-        PasswordAuthentication yes
+            PasswordAuthentication yes
 
-        X11Forwarding no
-        X11DisplayOffset 10
-        PrintMotd no
-        PrintLastLog yes
-        TCPKeepAlive yes
+            X11Forwarding no
+            X11DisplayOffset 10
+            PrintMotd no
+            PrintLastLog yes
+            TCPKeepAlive yes
 
-        AcceptEnv LANG LC_*
+            AcceptEnv LANG LC_*
 
-        Subsystem sftp /usr/lib/openssh/sftp-server
+            Subsystem sftp /usr/lib/openssh/sftp-server
 
-        UsePAM yes
-
+            UsePAM yes
+        </p>
         <li>Disable SSH Keys or just SSH</li>
-        ○	Edit /etc/ssh/sshd_config, set authorized keys to no
+            Edit /etc/ssh/sshd_config, set authorized keys to no
         <li>Could also allow only specific users.</li>
-        ○	Edit /etc/ssh/sshd_config, add “AllowUsers root@10.1.0.0/24”, allows only root to log in from the 10.1.0.0 subnet
+            Edit /etc/ssh/sshd_config, add “AllowUsers root@10.1.0.0/24”, allows only root to log in from the 10.1.0.0 subnet
         10. Backup Again (Local + Remote)
         <li>Firewall: Allow out to backup server on SSH</li>
         <li>Copy backups to backup server via SSH (scp/sftp)</li>
@@ -285,7 +289,6 @@ function LinuxChecklist(){
         <li>auditd session logging / script session logging (see Guides)</li>
         <li>debsums, rpm -Va</li>
 
-        </p>
     </div>
 </div>
     );

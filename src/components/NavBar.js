@@ -6,10 +6,11 @@ import ChecklistDropdown from './pages/checklist/ChecklistDropdown';
 import EssayDropdown from './pages/essay/EssayDropdown';
 import ProjectDropdown from './pages/project/ProjectDropdown';
 import { BsFillCaretDownFill, BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 function NavBar() {
     const [theme, setTheme] = useState(null);
-
+    const [navbar, setNavbar] = useState(false);
     useEffect(() => {
         if(window.matchMedia('(prefers-color-scheme: dark)').matches){
             setTheme('dark');
@@ -98,46 +99,51 @@ function NavBar() {
     }
 
     const closeMobileMenu = () => setClick(false);
+    const windowMode = () => {
+        if(window.innerWidth < 960){
+            document.getElementById("navbar").document.documentElement.classList.add("hidden")
+        }
+    }
 
     return (
 <>
 <div className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5 dark:bg-navy rounded-lg'>
-    <div className={click ? 'nav-menu active' : 'nav-menu'}>
+    <div id="navbar" class="sm:hidden" className={click ? 'nav-menu active' : 'nav-menu'}>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div onClick={closeMobileMenu}><Link to='/' className='navbar-home'>Home</Link></div>
+            <div><Link to='/' className='navbar-home'>Home</Link></div>
         </div>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onClick={closeMobileMenu} onTouchStartCapture={onCampMouseEnter}>
+            <button className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onTouchStart={setCampDropdown}>
                 <div className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></div>
                 {campDropdown && <CampDropdown />}
-            </div>
+            </button>
         </div>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onClick={closeMobileMenu}>
+            <button className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onTouchStart={setChecklistDropdown}>
                 <div className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></div>
                 {checklistDropdown && <ChecklistDropdown />}
-            </div>
+            </button>
         </div>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onClick={closeMobileMenu}>
+            <button className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onTouchStart={setEssayDropdown}>
                 <div className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></div>
                 {essayDropdown && <EssayDropdown />}
-            </div>
+            </button>
         </div>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onClick={closeMobileMenu}>
+            <button className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onTouchStart={setProjectDropdown}>
                 <div className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></div>
                 {projectDropdown && <ProjectDropdown />}
-            </div>
+            </button>
         </div>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div onClick={closeMobileMenu}><Link to='/religion' className='navbar-religion'>Religion</Link></div>
+            <div><Link to='/religion' className='navbar-religion'>Religion</Link></div>
         </div>
 
         <div class="ml-1 p-2 dark:hover:ring-offset-midTeal inline-block dark:hidden">
@@ -148,7 +154,9 @@ function NavBar() {
             <button onClick={handleThemeSwitch}><BsFillSunFill size={25}/></button>
         </div>
     </div>
-</div>
+
+
+   </div>
 </>
     );
 }

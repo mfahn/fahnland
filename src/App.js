@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import Home from './components/Home';
 import NavBar from './components/NavBar';
-import Minnesota from './components/pages/camp/Minnesota';
+import Medora from './components/pages/camp/Medora';
 import WindowsChecklist from './components/pages/checklist/WindowsChecklist';
 import LinuxChecklist from './components/pages/checklist/LinuxChecklist';
 import IncidentResponse from './components/pages/project/IncidentResponse';
@@ -25,7 +25,7 @@ function App() {
       <Route path='/' index exact element={<Home />} />
       <Route path='/camp/glacier' exact element={<Glacier />} />
       <Route path='/camp/woodlandcarribou' exact element={<WoodlandCarribou />} />
-      <Route path='/camp/Minnesota' element={<Minnesota />} />
+      <Route path='/camp/Medora' element={<Medora />} />
       <Route path='/checklist/WindowsChecklist' element={<WindowsChecklist />} />
       <Route path='/checklist/LinuxChecklist' element={<LinuxChecklist />} />
       <Route path='/projects/server' element={<Server />} />

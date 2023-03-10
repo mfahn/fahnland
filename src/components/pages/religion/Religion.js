@@ -7,7 +7,7 @@ function Religion() {
     <div class="ring-dark p-2 ml-1 mr-1">
         <a class="hover:ring-lowTeal hover:text-lowTeal text-lg font-bold dark:ring dark:ring-lowTeal dark:hover:ring-midTeal dark:hover:text-teal" href="https://jesusisreal-stl.org/">Evidence of the Existence of Jesus Christ</a>
         <div class="text-base mr-auto ml-auto p-5 w-4/5">
-            This website details some of the miracles directly related to the existence of Jesus Christ such as the Shroud of Turin, the Veil of Manoppello, the Veil of Veronica. It also details a miracle regarding the Holy Eucharist turning into heart tissue with a distinct AB blood type. This heart tissue can still be observed in a church in Luciano, Italy where it has remained incorrupt without the assistance of preservers.
+            This website details some of the miracles directly related to the existence of Jesus Christ such as the Shroud of Turin, the Veil of Manoppello, and the Veil of Veronica. It also details a miracle regarding the Holy Eucharist turning into heart tissue with a distinct AB blood type. This heart tissue can still be observed in a church in Luciano, Italy where it has remained incorrupt without the assistance of preservers.
         </div>
     </div>
     <div class="ring-dark p-2 ml-1 mr-1">

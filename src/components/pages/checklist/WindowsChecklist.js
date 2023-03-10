@@ -5,7 +5,8 @@ function WindowsChecklist(){
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
     <div class="w-4/5 text-center ml-auto mr-auto">
     <h1>Windows Checklist</h1>
-
+    <p>In Collegiate Cyber Defense Competitions (CCDC), a team of defenders must protect a network from the intrusions of an active red team. They must simultaneously secure their systems and keep scored services like websites and databases online. During the competition, simulated employers will bring business tasks to the team of defenders who must carry out the business instructions. This is a generic *nix Checklist to guide those defensive efforts.
+    </p>
 <div>
     <h2>FW</h2>
     <ol>
