@@ -107,7 +107,7 @@ function NavBar() {
 
     return (
 <>
-<div className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5 dark:bg-navy rounded-lg'>
+<div className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5 bg-bg-gray dark:bg-navy rounded-lg'>
     <div id="navbar" class="sm:hidden" className={click ? 'nav-menu active' : 'nav-menu'}>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">

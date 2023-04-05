@@ -2,11 +2,12 @@ import React from 'react';
 
 function LinuxChecklist(){
     return(
-<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
+<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
+    <div class="lg:w-4/5 sm:w-7/8">
     <div>
-        <h1 class="font-bold">Linux Checklist</h1>
+        <h1 class="font-bold text-center">Linux Checklist</h1>
     </div>
-    <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
+    <div class="m-auto pt-5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
         <p>In Collegiate Cyber Defense Competitions (CCDC), a team of defenders must protect a network from the intrusions of an active red team. They must simultaneously secure their systems and keep scored services like websites and databases online. During the competition, simulated employers will bring business tasks to the team of defenders who must carry out the business instructions. This is a generic *nix Checklist to guide those defensive efforts.
         </p>
 
@@ -290,6 +291,8 @@ function LinuxChecklist(){
         <li>debsums, rpm -Va</li>
 
     </div>
+    </div>
+
 </div>
     );
 }
