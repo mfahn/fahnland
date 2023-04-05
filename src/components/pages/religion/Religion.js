@@ -4,7 +4,7 @@ import '../../../App.css';
 function Religion() {
     return (
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
-    <div class="lg:w-4/5 sm:w-7/8">
+    <div class="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
     <div class="ring-dark p-2 ml-1 mr-1">
         <a class="hover:ring-lowTeal hover:text-lowTeal text-lg font-bold text-center dark:ring dark:ring-lowTeal dark:hover:ring-midTeal dark:hover:text-teal" href="https://jesusisreal-stl.org/">Evidence of the Existence of Jesus Christ</a>
         <div class="text-base pt-5">

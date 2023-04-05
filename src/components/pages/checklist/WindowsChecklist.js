@@ -3,7 +3,7 @@ import React from 'react';
 function WindowsChecklist(){
     return(
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg  dark:text-bg-gray dark:bg-navy">
-    <div class="lg:w-4/5 sm:w-7/8">
+    <div class="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
             <div class="text-center font-bold"><h1>Windows Checklist</h1></div>
             <p>In Collegiate Cyber Defense Competitions (CCDC), a team of defenders must protect a network from the intrusions of an active red team. They must simultaneously secure their systems and keep scored services like websites and databases online. During the competition, simulated employers will bring business tasks to the team of defenders who must carry out the business instructions. This is a generic *nix Checklist to guide those defensive efforts.
             </p>

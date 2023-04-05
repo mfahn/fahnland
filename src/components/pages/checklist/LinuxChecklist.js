@@ -3,7 +3,7 @@ import React from 'react';
 function LinuxChecklist(){
     return(
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
-    <div class="lg:w-4/5 sm:w-7/8">
+    <div class="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
     <div>
         <h1 class="font-bold text-center">Linux Checklist</h1>
     </div>

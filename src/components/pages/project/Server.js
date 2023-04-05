@@ -5,7 +5,7 @@ import lab from '../../images/server/HomeLab.png';
 function Server() {
 return (
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
-  <div class="lg:w-4/5 sm:w-7/8">
+  <div class="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
     <h1 class="text-dark text-lg dark:text-bg-gray font-bold text-center">Proxmox Home Lab</h1>
 
     <p class="ml-auto mr-auto">
