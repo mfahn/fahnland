@@ -583,10 +583,6 @@ video {
   margin-left: auto;
 }
 
-.mr-1 {
-  margin-right: 0.25rem;
-}
-
 .mr-auto {
   margin-right: auto;
 }
@@ -744,6 +740,11 @@ video {
 .dark .dark\:text-bg-gray {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-lowTeal {
+  --tw-text-opacity: 1;
+  color: rgb(56 125 122 / var(--tw-text-opacity));
 }
 
 .dark .dark\:ring {
