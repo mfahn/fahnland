@@ -1,13 +1,13 @@
 import '../../../App.css';
-import { ChecklistMenuItems } from './ChecklistMenuItems';
+import { InfoSecMenuItems } from './InfoSecMenuItems';
 import { Link } from 'react-router-dom';
 
-function ChecklistDropdown() {
+function InfoSecDropdown() {
 
     return (
 <div class="fixed">
 <ul>
-    {ChecklistMenuItems.map((item,index) => {
+    {InfoSecMenuItems.map((item,index) => {
         return (
             <li class="bg-bg-gray text-dark hover:text-midTeal text-lg p-1" key={index}>
                 <Link 
@@ -22,4 +22,4 @@ function ChecklistDropdown() {
     );
 }
 
-export default ChecklistDropdown;
+export default InfoSecDropdown;

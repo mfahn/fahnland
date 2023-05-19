@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import CampDropdown from './pages/camp/CampDropdown';
-import ChecklistDropdown from './pages/checklist/ChecklistDropdown';
+import ChecklistDropdown from './pages/infosec/InfoSecDropdown';
 import EssayDropdown from './pages/essay/EssayDropdown';
 import ProjectDropdown from './pages/project/ProjectDropdown';
 import { BsFillCaretDownFill, BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
@@ -39,14 +39,14 @@ function NavBar() {
     const [projectDropdown, setProjectDropdown] = useState(false);
 
     const onCampMouseEnter = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setCampDropdown(false);
         } else{
             setCampDropdown(true);
         }
     }
     const onCampMouseLeave = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setCampDropdown(false);
         } else{
             setCampDropdown(false);
@@ -54,14 +54,14 @@ function NavBar() {
     }
 
     const onChecklistMouseEnter = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setChecklistDropdown(false);
         } else{
             setChecklistDropdown(true);
         }
     }
     const onChecklistMouseLeave = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setChecklistDropdown(false);
         } else{
             setChecklistDropdown(false);
@@ -69,14 +69,14 @@ function NavBar() {
     }
 
     const onEssayMouseEnter = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setEssayDropdown(false);
         } else{
             setEssayDropdown(true);
         }
     }
     const onEssayMouseLeave = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setEssayDropdown(false);
         } else{
             setEssayDropdown(false);
@@ -84,14 +84,14 @@ function NavBar() {
     }
 
     const onProjectMouseEnter = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setProjectDropdown(false);
         } else{
             setProjectDropdown(true);
         }
     }
     const onProjectMouseLeave = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             setProjectDropdown(false);
         } else{
             setProjectDropdown(false);
@@ -100,7 +100,7 @@ function NavBar() {
 
     const closeMobileMenu = () => setClick(false);
     const windowMode = () => {
-        if(window.innerWidth < 960){
+        if(window.innerWidth < 860){
             document.getElementById("navbar").document.documentElement.classList.add("hidden")
         }
     }
@@ -116,14 +116,14 @@ function NavBar() {
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
             <button className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onTouchStart={setCampDropdown}>
-                <div className='nav-links'>Camping<BsFillCaretDownFill class='inline-block'/></div>
+                <div className='nav-links'>Traveling<BsFillCaretDownFill class='inline-block'/></div>
                 {campDropdown && <CampDropdown />}
             </button>
         </div>
 
         <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
             <button className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onTouchStart={setChecklistDropdown}>
-                <div className='nav-links'>Checklists<BsFillCaretDownFill class='inline-block'/></div>
+                <div className='nav-links'>InfoSec<BsFillCaretDownFill class='inline-block'/></div>
                 {checklistDropdown && <ChecklistDropdown />}
             </button>
         </div>
