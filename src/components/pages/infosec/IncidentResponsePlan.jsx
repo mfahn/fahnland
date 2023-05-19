@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../App.css';
-import { Line } from 'react-chartjs-2';
+import raciChart from '../../images/incident-response/raciChart.png';
 
 function IncidentResponsePlan() {
     return (
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
   <div class="lg:w-4/5 sm:w-7/8 m-auto">
-      
+    <h1 class="text-2xl font-bold text-center">Incident Response Plan</h1>
+    <p class="text-sm text-center text-dark dark:text-bg-gray p-5">
+      Michael Fahnlander 4/2/23
+    </p>
     <p class="text-base text-dark dark:text-bg-gray">
       I wrote this Ransomware Incident Response Plan for a graduate Incident Response class at Dakota State University. Full disclosure, ChatGPT was permitted for this assignment, and I used it for some of the sections of this plan.
     </p>
@@ -28,75 +31,232 @@ function IncidentResponsePlan() {
     </p>
 
 <h1 class="text-lg font-bold text-center">Relevant Compliance Authorities</h1>
-
-Policy/Standard/Law	Compliance PoC	Contact Information
-		
-		
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Policy/Standard/Law</th>
+      <th class="border border-dark dark:border-bg-gray p-3">PoC</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Contact</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 
   <h1 class="text-lg font-bold text-center">Key Definitions</h1>
-  <p class="text-base text-dark dark:text-bg-gray">
-    Event: A security event is any occurrence that may indicate that an organization's information systems, assets, or data have been compromised or may be vulnerable to a threat.
-    </p>
-    <p class="text-base text-dark dark:text-bg-gray">
-    Incident:   An occurrence that actually or potentially jeopardizes the confidentiality, integrity, or availability of an information system or the information the system processes, stores, or transmits or that constitutes a violation or imminent threat of violation of security policies, security procedures, or acceptable use policies [2].
-    </p>
-    <p class="text-base text-dark dark:text-bg-gray">
-    Breach: Attackers were successful in causing harm to organization by compromising the confidentiality, integrity, or availability of information or systems.
-    </p>
-    <p class="text-base text-dark dark:text-bg-gray">
-    Severity: How much a breach effects company. Reference Incident Identification Section for quality-based classification of a breach. Compliance obligations plays a role in determining the categories of data with special requirements for each one, for example Protected Health Information with HIPAA or financial information with the Graham-Leach Bliley Act.
-  </p>
+<ul class="m-auto p-5 text-base text-dark dark:text-bg-gray list-disc">
+    <li>Event: A security event is any occurrence that may indicate that an organization's information systems, assets, or data have been compromised or may be vulnerable to a threat.
+  </li>
+  <li>Incident: An occurrence that actually or potentially jeopardizes the confidentiality, integrity, or availability of an information system or the information the system processes, stores, or transmits or that constitutes a violation or imminent threat of violation of security policies, security procedures, or acceptable use policies [2].
+  </li>
+  <li>Breach: Attackers were successful in causing harm to organization by compromising the confidentiality, integrity, or availability of information or systems.
+  </li>
+  <li>Severity: How much a breach effects company. Reference Incident Identification Section for quality-based classification of a breach. Compliance obligations plays a role in determining the categories of data with special requirements for each one, for example Protected Health Information with HIPAA or financial information with the Graham-Leach Bliley Act.
+  </li>
+</ul>
 
 <h1 class="text-lg font-bold text-center">Data Classification System</h1>
-
-Classification	Description
-Public	This type of data is intended for public consumption and can be freely shared. It includes marketing materials, press releases, and other information that is not sensitive or confidential.
-Internal	This type of data is intended for internal use only and should not be shared outside of company. It includes data related to company operations, such as strategic plans, sales figures, and employee performance reviews.
-Confidential	This type of data is highly sensitive and should be kept strictly confidential. It includes personally identifiable information (PII), financial data, trade secrets, and any other data that, if leaked or compromised, could result in significant harm to the company or its stakeholders.
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Classification</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray text-green-600">Public</td>
+      <td class="border border-dark dark:border-bg-gray">This type of data is intended for public consumption and can be freely shared. It includes marketing materials, press releases, and other information that is not sensitive or confidential.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray text-yellow-400">Internal</td>
+      <td class="border border-dark dark:border-bg-gray ">This type of data is intended for internal use only and should not be shared outside of company. It includes data related to company operations, such as strategic plans, sales figures, and employee performance reviews.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray text-red-300">Confidential</td>
+      <td class="border border-dark dark:border-bg-gray">This type of data is highly sensitive and should be kept strictly confidential. It includes personally identifiable information (PII), financial data, trade secrets, and any other data that, if leaked or compromised, could result in significant harm to the company or its stakeholders.
+</td>
+    </tr>
+  </tbody>
+</table>
 
   <h1 class="text-lg font-bold text-center">Incident Response Team</h1>
   <p class="text-base text-dark dark:text-bg-gray">
     This section identifies the members of the incident response team, their roles and responsibilities, and their contact information.
   </p>
-  <h1 class="text-lg font-bold text-center">Incident Response Team Members</h1>
+  <h1 class="text-lg font-bold text-center">Incident Response Team Members</h1>	
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Title</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Name</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Phone</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 
-Title	Name	Phone Number	Email
-
-
-<h1 class="text-lg font-bold text-center">Law Enforcement Contacts</h1>
-		
-Agency	Name	Phone Number	Email
+<h1 class="text-lg font-bold text-center">Law Enforcement Contacts</h1>	
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Agency</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Name</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Phone</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 
   <h1 class="text-lg font-bold text-center">Incident Identification</h1>
   <p class="text-base text-dark dark:text-bg-gray">
     This section describes the process for identifying potential incidents, including who should be notified and how. The security event should be escalated based on severity criteria in the Data Impact chart below. Common attack vectors are listed and overviewed. This is not an exhaustive list.
   </p>
 <h1 class="text-lg font-bold text-center">Common Incident Types</h1>
-
-Reconnaissance	Reconnaissance might include brute-forcing passwords, sending malformed packets to webservers, or attempting SQL Injection against database queries.
-Phishing Attack	Phishing attacks involve tricking users into revealing their personal information, such as login credentials, credit card numbers, or other sensitive information, by posing as a legitimate organization or person.
-Malware Infections	Malware is a type of malicious software that can harm or disrupt computer systems. Malware infections can result in loss of data, theft of sensitive information, or other forms of damage.
-Ransomware	Ransomware is a type of malware that encrypts files on a victim's computer and demands payment in exchange for the decryption key. Ransomware attacks can be very damaging and can result in significant financial losses.
-Distributed Denial-of-Service (DDoS)	DDoS attacks involve overwhelming a targeted server or network with traffic to disrupt or shut down its services. These attacks can be used for various purposes, including extortion, revenge, or political activism.
-Insider Threats	Insider threats involve employees or other insiders who use their access to a system to steal data or damage the organization in some way. This can be intentional or unintentional.
-Social Engineering	Social engineering attacks involve using psychological manipulation to trick users into giving up sensitive information or performing actions that are harmful to the organization.
-Unauthorized Access	Unauthorized access involves individuals or groups gaining access to a system or network without proper authorization. This can result in data theft, destruction, or other forms of damage.
-Advanced persistent threats (APTs)	APTs are sophisticated attacks that involve targeted, long-term efforts to gain access to a system or network. These attacks can be difficult to detect and can result in significant damage to the organization.
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Incident</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Reconnaissance</td>
+      <td class="border border-dark dark:border-bg-gray">Reconnaissance might include brute-forcing passwords, sending malformed packets to webservers, or attempting SQL Injection against database queries.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Phishing Attack</td>
+      <td class="border border-dark dark:border-bg-gray">Phishing attacks involve tricking users into revealing their personal information, such as login credentials, credit card numbers, or other sensitive information, by posing as a legitimate organization or person.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Malware Infections</td>
+      <td class="border border-dark dark:border-bg-gray">Malware is a type of malicious software that can harm or disrupt computer systems. Malware infections can result in loss of data, theft of sensitive information, or other forms of damage.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Ransomware</td>
+      <td class="border border-dark dark:border-bg-gray">Ransomware is a type of malware that encrypts files on a victim's computer and demands payment in exchange for the decryption key. Ransomware attacks can be very damaging and can result in significant financial losses.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Distributed Denial-of-Service (DDoS)</td>
+      <td class="border border-dark dark:border-bg-gray">	DDoS attacks involve overwhelming a targeted server or network with traffic to disrupt or shut down its services. These attacks can be used for various purposes, including extortion, revenge, or political activism.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Insider Threats</td>
+      <td class="border border-dark dark:border-bg-gray">Insider threats involve employees or other insiders who use their access to a system to steal data or damage the organization in some way. This can be intentional or unintentional.
+</td>
+    </tr>        
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Social Engineering</td>
+      <td class="border border-dark dark:border-bg-gray">Social engineering attacks involve using psychological manipulation to trick users into giving up sensitive information or performing actions that are harmful to the organization.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Unauthorized Access</td>
+      <td class="border border-dark dark:border-bg-gray">Unauthorized access involves individuals or groups gaining access to a system or network without proper authorization. This can result in data theft, destruction, or other forms of damage.
+</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Advanced persistent threats (APTs)</td>
+      <td class="border border-dark dark:border-bg-gray">APTs are sophisticated attacks that involve targeted, long-term efforts to gain access to a system or network. These attacks can be difficult to detect and can result in significant damage to the organization.
+</td>
+    </tr>
+  </tbody>
+</table>
 Common Incident Types [3], [4].
 
 <h1 class="text-lg font-bold text-center">Impact on Data/Systems</h1>
-
-	Low	Medium	High
-Confidentiality
-The unauthorized disclosure of information/data will have a:	Limited adverse effect on company operations, assets, or systems	Serious adverse effect on company operations, assets, or systems	Severe or catastrophic adverse effect on company operations, assets, or systems
-Integrity
-The unauthorized modification or destruction of data or systems could have a:	Limited adverse effect on company operations, assets, or systems	Serious adverse effect on company operations, assets, or systems	Severe or catastrophic adverse effect on company operations, assets, or systems
-Availability
-The disruption of access to or use of data/systems could have a:	Limited adverse effect on company operations, assets, or systems	Serious adverse effect on company operations, assets, or systems	Severe or catastrophic adverse effect on company operations, assets, or systems
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3"></th>
+      <th class="border border-dark dark:border-bg-gray p-3">Low</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Medium</th>
+      <th class="border border-dark dark:border-bg-gray p-3">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Confidentiality (unauthorized disclosure of information/data will have a:)</td>
+      <td class="border border-dark dark:border-bg-gray">Limited adverse effect on company operations, assets, or systems</td>
+      <td class="border border-dark dark:border-bg-gray">Serious adverse effect on company operations, assets, or systems	
+</td>
+      <td class="border border-dark dark:border-bg-gray">Severe or catastrophic adverse effect on company operations, assets, or systems</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Integrity (unauthorized modification or destruction of data or systems will have a:)</td>
+      <td class="border border-dark dark:border-bg-gray">Limited adverse effect on company operations, assets, or systems</td>
+      <td class="border border-dark dark:border-bg-gray">Serious adverse effect on company operations, assets, or systems</td>
+      <td class="border border-dark dark:border-bg-gray ">Severe or catastrophic adverse effect on company operations, assets, or systems</td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Availability (disruption of access to or use of data/systems will have a:)</td>
+      <td class="border border-dark dark:border-bg-gray">Limited adverse effect on company operations, assets, or systems</td>
+      <td class="border border-dark dark:border-bg-gray">Serious adverse effect on company operations, assets, or systems</td>
+      <td class="border border-dark dark:border-bg-gray">Severe or catastrophic adverse effect on company operations, assets, or systems</td>
+    </tr>
+  </tbody>
+</table>
 Data/System Impact Chart [5], [6].
 
 <h1 class="text-lg font-bold text-center">Company Organizational Chart</h1>
-
   <p class="text-base text-dark dark:text-bg-gray">
     The company chart reflects the organizational hierarchy for reporting and escalation purposes. Due diligence must be used to verify potential Indicators of Compromise (IoCs) to allow a security event to be escalated to a security incident or a security incident to be escalated to a security breach. The definitions in the Introduction may be used to clarify the differences between different occurrences.
   </p>
@@ -107,7 +267,7 @@ Data/System Impact Chart [5], [6].
   </p>
 
 <h1 class="text-lg font-bold text-center">Standard Isolation Procedure</h1>
-<ol class="text-base text-dark dark:text-bg-gray">
+<ol class="text-base m-auto list-decimal p-5 text-dark dark:text-bg-gray">
   <li>Disconnect the affected system from the network: The first step is to disconnect the affected system from the network to prevent the attacker from accessing the system and the network. Network data can be collected by an IDS or firewall. Disconnecting the device from the network serves to minimize communications with the attackers.</li>
   <li>Collect Memory Image from the system: Having a snapshot of the device allows analysts to investigate the malware or suspicious behavior</li>
   <li>Shut down the affected system: The next step is to shut down the affected system to prevent any further damage to the system or the network.</li>
@@ -117,21 +277,74 @@ Data/System Impact Chart [5], [6].
   <li>Monitor the system: After remediation, the system should be monitored closely to ensure that the issue has been fully resolved and to detect any further attempts by the attacker to gain access to the system or the network.</li>
 </ol>
 
-Department	Systems	Special Handling Requirements
-		
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Department</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Systems</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Special Handling Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
+
   <h1 class="text-lg font-bold text-center">Evidence Preservation</h1>
   <p class="text-base text-dark dark:text-bg-gray">
     This section establishes the procedures for collecting and preserving evidence related to the incident. The procedures must create a chain of people who can verify the evidence such that their testimony and the below chart may be accepted in a court of law. While most cyber-attacks occur from outside the network of the organization, insider threats must be accounted for in the Incident Response Plan [7]. The Procedures for collecting, preserving, and analyzing evidence must also secure and protect evidence. A chain of custody fulfills this objective. Physical evidence must be secured in a locked location such that it cannot be easily accessed or tampered with.
   </p>
 
-  <h1 class="text-lg font-bold text-center">Chain of Custody</h1>
-
-Evidence	Date/Time	Location	Collector	Witness
-				
+  <h1 class="text-lg font-bold text-center">Chain of Custody</h1>				
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Evidence</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Date/Time</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Location</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Collector</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Witness</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 				
 
 <h1 class="text-lg font-bold text-center">Physical Evidence Collection</h1>
-<ol class="text-base text-dark dark:text-bg-gray">
+<ol class="text-base m-auto p-5 list-decimal text-dark dark:text-bg-gray">
   <li>If the computer is on, photograph the computer and scene.</li>
   <ul>
     <li>If the computer is off, do not turn it on</li>
@@ -159,50 +372,15 @@ Evidence	Date/Time	Location	Collector	Witness
     </p>
 
     <h1 class="text-lg font-bold text-center">Incident Responsibilities</h1>
-
-Legend
-
-R - Responsible
-A - Accountable
-C - Consulted
-I - Informed	SOC Team	Incident Analyst	Incident Response Lead	Forensics Analyst	Communication Lead	Board/Leadership
-1.0	Incident Start						
-1.1	Identify Incident/Notify SOC						
-1.2	Involve Cyber Insurance per policy						
-2.0	Assign Roles						
-2.1	Fill out sheet with contact information						
-2.2	Alert employees						
-3.0	Response Initiation						
-3.1	Analysis						
-3.2	Gather Physical Artifacts						
-3.3	Categorize						
-3.4	Determine Resource Criticality and Impact						
-3.5	Identify Compromised Data 						
-3.6	Determine Data Sensitivity						
-3.7	Determine Priority						
-4.0	Confirm Incident						
-4.1	Contain						
-4.2	Eradicate						
-4.3	Recover						
-4.4	Alert Board						
-4.5	Alert Compliance Parties						
-4.6	Alert Affected Customers						
-4.7	Alert Public						
-5.0	Resolve						
-5.1	Document Incident						
-5.2	Conduct Lessons Learned Meeting						
-5.3	Review Effectiveness of the Handling Process						
-5.4	Identify & Recommend Improvements						
-6.0	Closed						
-6.1	Preserve Handling Information						
-Responsibilities Chart [3], [9].
+    <img src={raciChart} alt="" title="Raci Diagram"></img>
+    Responsibilities Chart [3], [9].
 
 <h1 class="text-lg font-bold text-center">Communication and Reporting</h1>
 <p class="text-base text-dark dark:text-bg-gray">
   This section outlines the procedures for communicating about the incident with stakeholders, customers, employees, and regulatory authorities. The communication and Reporting Policy establishes guidelines for when specific announcements must be made. The board must be alerted to any breach that could substantially damage the reputation or productivity of the organization. The internal company must be alerted to a security incident if the breach will affect a substantial number of employees or otherwise interrupt the general workplace. Third parties must be alerted to the incident if shared data or data processing systems are affected. Customers who have data compromised must be alerted to the occurrence of the breach. The general public does not need to know about a breach unless the severity of the breach necessitates the extra exposure to prevent further damage to the customer in the name of the company. This is the priority list for reporting:
 </p>
 
-<ol class="text-base text-dark dark:text-bg-gray">
+<ol class="text-base m-auto p-5 list-decimal text-dark dark:text-bg-gray">
   <li>Board</li>
   <li>Employees</li>
   <li>Third parties</li>
@@ -210,27 +388,76 @@ Responsibilities Chart [3], [9].
   <li>General public</li>
 </ol>
 
-
 <h1 class="text-lg font-bold text-center">Breach Compliance</h1>
- 
-Compliance Body	Threshold	Contact Information
-GDPR	72 hours from discovery of breach	
-HHS	Notify secretary within 60 days if 500 records. Notify secretary within 60 days of the end of the calendar year	Link to report breach of records
-
-PCI-DSS	Any credit card breach	
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Compliance Body</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Threshold</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Contact Information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">GDPR</td>
+      <td class="border border-dark dark:border-bg-gray">72 hours from discovery of breach</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">HHS</td>
+      <td class="border border-dark dark:border-bg-gray">Notify secretary within 60 days if 500 records. Notify secretary within 60 days of the end of the calendar year	Link to report breach of any records.</td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">PCI-DSS</td>
+      <td class="border border-dark dark:border-bg-gray">Any credit card breach</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 [10]
 
-Report Log
-Date/Time Issued	Recipient Group	Message
+<h1 class="text-lg font-bold text-center">Report Log</h1>
+  <table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Date/Time Issued</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Medium</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Group</th>
+      <th class="border border-dark dark:border-bg-gray p-3 w-2/5">Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 
 <h1 class="text-lg font-bold text-center">Recovery and Remediation</h1>
 
 <p class="text-base text-dark dark:text-bg-gray">
   This section describes the steps that should be taken to restore systems and data to their pre-incident state, implement corrective actions to prevent the attack from happening again, and take actions to prevent future incidents. The IT staff, security personnel, and management will be responsible for implementing the recovery and remediation procedures. The IT staff will restore systems and data from backups, rebuild servers, and reinstall software as necessary. The security personnel will conduct penetration testing, vulnerability scans, and other security assessments to ensure that the recovered systems and data are fully functional and secure. Management will communicate with stakeholders and provide regular status updates on the recovery and remediation process. The recovery procedures will include the following steps:
 </p>
-<ol class="text-base text-dark dark:text-bg-gray">
+
+<ol class="list-decimal m-auto p-5 text-base text-dark dark:text-bg-gray">
   <li>Restore</li>
-    <ul>
+    <ul class="list-disc">
       <li>Assess the extent of the damage and prioritize systems and data for recovery.</li>
       <li>Restore data from the most recent backups.</li>
       <li>Rebuild servers and reinstall software as necessary.</li>
@@ -244,13 +471,13 @@ Date/Time Issued	Recipient Group	Message
         <li>Conduct other security assessments as necessary to ensure that the recovered systems and data are fully functional and secure.</li>
       </ul>
   <li>Communication Plan: The communication plan will include the following steps:</li>
-      <ul>
+      <ul class="list-disc">
         <li>Provide regular status updates to stakeholders on the recovery and remediation process.</li>
         <li>Notify stakeholders of significant milestones, such as the completion of the recovery process.</li>
         <li>Conduct post-incident reviews with stakeholders to identify areas for improvement and refine the incident response plan as necessary.</li>
       </ul>
   <li>Post-Incident Review: The post-incident review process will include the following steps:</li>
-      <ul>
+      <ul class="list-disc">
         <li>Conduct debriefing sessions with team members and stakeholders to identify areas for improvement.</li>
         <li>Document lessons learned from the incident.</li>
         <li>Update the incident response plan as necessary based on the findings of the post-incident review.</li>
@@ -295,52 +522,133 @@ Date/Time Issued	Recipient Group	Message
 <p class="text-base text-dark dark:text-bg-gray">
   A list of specific action items that need to be taken to address the areas of improvement and incorporate the lessons learned into future incident response planning.
 </p>
-
-
-		Action Deadline Facilitator
-
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Action</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Deadline</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Facilitator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "> </td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 
 <h1 class="text-lg font-bold text-center">Appendix A - Changelog</h1>
-
-Date	Version	Author	Description of Changes	Approved By
-
-				
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Date</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Version</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Author</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Description of Changes</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Approved By</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+    <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray "></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"> </td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
 
 <h1 class="text-lg font-bold text-center">Appendix B - IR Metrics</h1>
-
-<div class="grid grid-cols-2">
-  <div class="col-span-1 bg-gray-200 border border-bg-gray font-bold">Value</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray font-bold">Metric</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"># Unique Data Sources feeding SIEM</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Detect Data Source Issue</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Correct Data Source Issue</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">Time to Sweep Enterprise</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Forward Alarm</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Open Formal Incident</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"># of high severity alerts not reviewed after 8 or 24 hours</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">Cost per Incident	</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Detect Security Incident</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Contain Security Incident</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Expel Intruder</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">MTT Bring Systems Online</div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray"></div>
-  <div class="col-span-1 bg-gray-200 border border-bg-gray">*MTT means “Mean Time To” [11].</div>
-</div>
+<table class="table-auto m-auto w-full">
+  <thead>
+    <tr class="border border-dark dark:border-bg-gray">
+      <th class="border border-dark dark:border-bg-gray p-3">Metric</th>
+      <th class="border border-dark dark:border-bg-gray p-3">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"># Unique Data Sources feeding SIEM</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Correct Data Source Issue</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Detect Data Source Issue</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Time to Sweep Enterprise</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Forward Alarm</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Bring Systems Online</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Expel Intruder</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Contain Security Incident</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Detect Security Incident</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">Cost per Incident</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray"># of high severity alerts not reviewed after 8 or 24 hours</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+    <tr class="border border-dark dark:border-bg-gray h-7">
+      <td class="border border-dark dark:border-bg-gray">MTT Open Formal Incident</td>
+      <td class="border border-dark dark:border-bg-gray"></td>
+    </tr>
+  </tbody>
+</table>
+<p class="text-base text-dark dark:text-bg-gray">
+  *MTT means “Mean Time To” [11].
+</p>
 
 <h1 class="text-lg font-bold text-center">Works Cited</h1>
-
 <p class="text-base text-dark dark:text-bg-gray">
   [1] 	M. E. Whitman and H. J. Mattord, Management of Information Security, 6 ed., Boston: Cengage, 2018. 
 </p>

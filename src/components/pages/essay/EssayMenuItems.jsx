@@ -6,12 +6,12 @@ export const EssayMenuItems = [
     },
     {
         title: 'Stopping Porn',
-        path: '/essays/StoppingPorn',
+        path: '/essays/Stopping-Porn',
         cName: 'essay-dropdown-link'
     },
     {
         title: 'Survey of the Role of Generative Language Models in Education',
-        path: '/essays/RoleOfGenerativeLanguageModelsInEducation',
+        path: '/essays/Generative-Language-Models-In-Education',
         cName: 'essay-dropdown-link'
     }, 
 ];

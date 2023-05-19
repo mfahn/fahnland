@@ -10,6 +10,12 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {},
+    listStyleType: {
+      square: 'square',
+      roman: 'upper-roman',
+      disc: 'disc',
+      decimal: 'decimal',
+    },
     screens: {
       'sm': '640px',
       // => @media (min-width: 640px) { ... }

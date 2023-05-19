@@ -31,19 +31,19 @@ function App() {
     <Routes>
       <Route path='/' index exact element={<Home />} />
       <Route path='/camp/glacier' exact element={<Glacier />} />
-      <Route path='/camp/woodlandcarribou' exact element={<WoodlandCarribou />} />
+      <Route path='/camp/woodland-carribou' exact element={<WoodlandCarribou />} />
       <Route path='/camp/Medora' element={<Medora />} />
-      <Route path='/infosec/WindowsChecklist' element={<WindowsChecklist />} />
-      <Route path='/infosec/LinuxChecklist' element={<LinuxChecklist />} />
-      <Route path='/infosec/IncidentResponsePlan' element={<IncidentResponsePlan />} />
-      <Route path='/infosec/RansomwareIncidentResponsePlan' element={<RansomwareIRP />} />
-      <Route path='/infosec/WritingMalware' element={<Malware />} />
-      <Route path='/infosec/Redline' element={<Redline />} />
-      <Route path='/infosec/VerizonDBIR' element={<VerizonDBR />} />
+      <Route path='/infosec/Windows-Checklist' element={<WindowsChecklist />} />
+      <Route path='/infosec/Linux-Checklist' element={<LinuxChecklist />} />
+      <Route path='/infosec/Incident-Response-Plan' element={<IncidentResponsePlan />} />
+      <Route path='/infosec/Ransomware-Incident-Response-Playbook' element={<RansomwareIRP />} />
+      <Route path='/infosec/Making-Malware' element={<Malware />} />
+      <Route path='/infosec/Redline-Investigation' element={<Redline />} />
+      <Route path='/infosec/Verizon-DBIR' element={<VerizonDBR />} />
       <Route path='/projects/server' element={<Server />} />
       <Route path='/essays/porn' element={<Porn />} />
-      <Route path='/essays/StoppingPorn' element={<StopPorn />} />
-      <Route path='/essays/RoleOfGenerativeLanguageModelsInEducation' element={<ChatGPT />} />
+      <Route path='/essays/Stopping-Porn' element={<StopPorn />} />
+      <Route path='/essays/Generative-Language-Models-In-Education' element={<ChatGPT />} />
       <Route path='/religion' element={<Religion />} />
       <Route path='/projects/Incident-Response' element={<IncidentResponse />} />
       <Route path='*' element={<NotFound />} />

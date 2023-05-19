@@ -1,37 +1,37 @@
 export const InfoSecMenuItems = [
     {
         title: 'Linux Checklist',
-        path: '/infosec/LinuxChecklist',
+        path: '/infosec/Linux-Checklist',
         cName: 'infosec-dropdown-link'
     },
     {
         title: 'Windows Checklist',
-        path: '/infosec/WindowsChecklist',
+        path: '/infosec/Windows-Checklist',
         cName: 'infosec-dropdown-link'
     },   
     {
         title: 'Malware',
-        path: '/infosec/WritingMalware',
+        path: '/infosec/Making-Malware',
         cName: 'infosec-dropdown-link'
     },
     {
         title: 'Incident Response Plan',
-        path: '/infosec/IncidentResponsePlan',
+        path: '/infosec/Incident-Response-Plan',
         cName: 'infosec-dropdown-link'
     },
     {
-        title: 'Ransomware Incident Response Plan',
-        path: '/infosec/RansomwareIncidentResponsePlan',
+        title: 'Ransomware Incident Response Playbook',
+        path: '/infosec/Ransomware-Incident-Response-Playbook',
         cName: 'infosec-dropdown-link'
     },
     {
         title: 'Verizon DBIR Paper',
-        path: '/infosec/VerizonDBIR',
+        path: '/infosec/Verizon-DBIR',
         cName: 'infosec-dropdown-link'
     },
     {
         title: 'Redline Investigation',
-        path: '/infosec/Redline',
+        path: '/infosec/Redline-Investigation',
         cName: 'infosec-dropdown-link'
     }
 ];

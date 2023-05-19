@@ -7,7 +7,10 @@ function VerizonDBR() {
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
   <div class="lg:w-4/5 sm:w-7/8 m-auto">
 
-    <h1 class="text-lg font-bold text-center">Introduction</h1>
+    <h1 class="text-2xl font-bold text-center">Verizon DBIR Discussion</h1>
+    <p class="text-sm text-center text-dark dark:text-bg-gray p-5">
+      Michael Fahnlander 2/12/23
+    </p>
     <p class="text-base text-dark dark:text-bg-gray">
       In 2020-2021, the FBI recovered or froze 93% of money lost to Business Email Compromises for ½ of the organizations that sought their help (Bassett, et all., 2022). This is just one interesting factoid from Verizon's 2022 Data Breach Investigations Report (DBIR) which aggregated terabytes of breach data in order to observe patterns in the types of attacks by malicious actors. This article operates on the principle that offense informs defense, and this document provides invaluable insight into the habits of malicious attackers. The DBIR informs defenders about the most popular vectors to defend against, helping them allocate finite and often inadequate resources to maximize their effectiveness.
     </p>

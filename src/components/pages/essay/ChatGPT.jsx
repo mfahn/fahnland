@@ -6,8 +6,10 @@ function ChatGPT() {
     return (
 <div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
   <div class="lg:w-4/5 sm:w-7/8 m-auto">
-    <h1 class="text-lg font-bold text-center">Survey of Generative Language Models' Role in Education</h1>
-
+    <h1 class="text-2xl font-bold text-center">Survey of Generative Language Models' Role in Education</h1>
+    <p class="text-sm text-center text-dark dark:text-bg-gray p-5">
+      Michael Fahnlander 5/6/23
+    </p>
     <h1 class="text-lg font-bold text-center">I.	Introduction</h1>
 
     <p class="text-base text-dark dark:text-bg-gray">
