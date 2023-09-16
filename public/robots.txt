@@ -10,8 +10,6 @@ User-agent: Robozilla
 Disallow: /
 User-agent: Nutch
 Disallow: /
-User-agent: ia_archiver
-Disallow: 
 User-agent: baiduspider
 Disallow: /
 User-agent: naverbot

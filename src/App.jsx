@@ -20,7 +20,9 @@ import Malware from './components/pages/infosec/Malware';
 import RansomwareIRP from './components/pages/infosec/RansomwarePlaybook';
 import VerizonDBR from './components/pages/infosec/VerizonDBR';
 import ChatGPT from './components/pages/essay/ChatGPT';
-import Redline from './components/pages/infosec/Redline';
+import Redline from './components/pages/infosec/Redline'
+import Nefarious from './components/pages/essay/Nefarious';
+import PussInBoots from './components/pages/essay/PussInBoots';
 
 function App() {
 
@@ -30,7 +32,7 @@ function App() {
     <NavBar />
     <Routes>
       <Route path='/' index exact element={<Home />} />
-      <Route path='/camp/glacier' exact element={<Glacier />} />
+      <Route path='/camp/Glacier' exact element={<Glacier />} />
       <Route path='/camp/woodland-carribou' exact element={<WoodlandCarribou />} />
       <Route path='/camp/Medora' element={<Medora />} />
       <Route path='/infosec/Windows-Checklist' element={<WindowsChecklist />} />
@@ -40,10 +42,12 @@ function App() {
       <Route path='/infosec/Making-Malware' element={<Malware />} />
       <Route path='/infosec/Redline-Investigation' element={<Redline />} />
       <Route path='/infosec/Verizon-DBIR' element={<VerizonDBR />} />
-      <Route path='/projects/server' element={<Server />} />
-      <Route path='/essays/porn' element={<Porn />} />
-      <Route path='/essays/Stopping-Porn' element={<StopPorn />} />
-      <Route path='/essays/Generative-Language-Models-In-Education' element={<ChatGPT />} />
+      <Route path='/projects/Server' element={<Server />} />
+      <Route path='/essays/Porn' element={<Porn />} />
+      <Route path='/essays/Recover' element={<StopPorn />} />
+      <Route path='/essays/ChatGPT' element={<ChatGPT />} />
+      <Route path='/essays/Nefarious' element={<Nefarious />} />
+      <Route path='/essays/PussInBoots' element={<PussInBoots />} />
       <Route path='/religion' element={<Religion />} />
       <Route path='/projects/Incident-Response' element={<IncidentResponse />} />
       <Route path='*' element={<NotFound />} />

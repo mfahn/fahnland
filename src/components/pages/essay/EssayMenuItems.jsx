@@ -1,12 +1,22 @@
 export const EssayMenuItems = [
     {
         title: 'Porn',
-        path: '/essays/porn',
+        path: '/essays/Porn',
         cName: 'essay-dropdown-link'
     },
     {
-        title: 'Survey of the Role of Generative Language Models in Education',
-        path: '/essays/Generative-Language-Models-In-Education',
+        title: 'Generative LLMs in Education',
+        path: '/essays/ChatGPT',
+        cName: 'essay-dropdown-link'
+    }, 
+    {
+        title: 'Nefarious: A Movie Review',
+        path: '/essays/Nefarious',
+        cName: 'essay-dropdown-link'
+    }, 
+    {
+        title: 'Puss In Boots: The Last Wish',
+        path: '/essays/PussInBoots',
         cName: 'essay-dropdown-link'
     }, 
 ];

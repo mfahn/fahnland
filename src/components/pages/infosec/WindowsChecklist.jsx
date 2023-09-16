@@ -2,9 +2,9 @@ import React from 'react';
 
 function WindowsChecklist(){
     return(
-<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg  dark:text-bg-gray dark:bg-navy">
-    <div class="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
-            <div class="text-center font-bold"><h1>Windows Checklist</h1></div>
+<div className="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg  dark:text-bg-gray dark:bg-navy">
+    <div className="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
+            <div className="text-center font-bold"><h1>Windows Checklist</h1></div>
             <p>In Collegiate Cyber Defense Competitions (CCDC), a team of defenders must protect a network from the intrusions of an active red team. They must simultaneously secure their systems and keep scored services like websites and databases online. During the competition, simulated employers will bring business tasks to the team of defenders who must carry out the business instructions. This is a generic *nix Checklist to guide those defensive efforts.
             </p>
 
@@ -53,13 +53,13 @@ function WindowsChecklist(){
                 Get-LocalUser * | Set-LocalUser -Password $password -Confirm
 
                 Change Local Account Passwords (PowerShell as ADMIN):
-                gwmi -class win32_useraccount -filter localaccount=true | % {'{'}net user $_.name “PASSWORD”{'}'}
+                gwmi -className win32_useraccount -filter localaccount=true | % {'{'}net user $_.name “PASSWORD”{'}'}
 
                 c.	Active Directory - ONLY DC DO THIS - also probaly will work
 
                 $NewPassword = (Read-Host -Prompt "Type the password" -AsSecureString)
                 Get-ADUser -Filter * | Set-ADAccountPassword -reset -NewPassword $NewPassword
-                gwmi -class win32_useraccount | % {'{'}net user $_.name "PASSWORD"{'}'}
+                gwmi -className win32_useraccount | % {'{'}net user $_.name "PASSWORD"{'}'}
 
                 Change Domain Account Passwords (PowerShell):
                 Get-ADUser -Filter * | Set-ADAccountPassword -Reset -NewPassword (Read-Host -AsSecureString -Force)
@@ -68,13 +68,13 @@ function WindowsChecklist(){
                 Set-ADAccountPassword -Identity USERNAME -Reset -NewPassword (ConvertTo-SecureString -AsPlainText “PASSWORD -Force)
 
                 Report for Local User Password Changes (Powershell)
-                gwmi -class win32_useraccount | % {'{'}$_.name+”:PASSWORD”{'}'} | Out-File users.txt
+                gwmi -className win32_useraccount | % {'{'}$_.name+”:PASSWORD”{'}'} | Out-File users.txt
 
                 Report for AD Password Changes (Powershell)
                 $users = Get-ADUser -filter *; $results = foreach ($u in $users) {'{'} $u.SamAccountName + ":PASSWORD"{'}'}; $results | Out-File adusers.txt
 
                 Backup For Changing Local Account Passwords (PowerShell):
-                foreach ($x in (Get-wmiobject -class win32_useraccount -filter localaccount=true | select-object name)){'{'} net user $x.name “PASSWORD” {'}'}
+                foreach ($x in (Get-wmiobject -className win32_useraccount -filter localaccount=true | select-object name)){'{'} net user $x.name “PASSWORD” {'}'}
                 Account management
                 6.	Disable unneeded user accounts
                     <div>	Local Accounts</div>
@@ -258,7 +258,7 @@ function WindowsChecklist(){
         Dsquery user -name * | dsmod user -pwd Password1!
 
         Local Accounts:
-        foreach ($x in (Get-wmiobject -class win32_useraccount -filter “localaccount='true'” | select-object name)){'{'} net user $x.name “PASSWORD” {'}'}
+        foreach ($x in (Get-wmiobject -className win32_useraccount -filter “localaccount='true'” | select-object name)){'{'} net user $x.name “PASSWORD” {'}'}
 
         Regedit: HKEY_LOCAL_MACHINE{'->'}SOFTWARE{'->'}Policies{'->'}Microsoft{'->'}Windows Firewall{'->'}FirewallRules
 

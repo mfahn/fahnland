@@ -2,23 +2,23 @@ import React from 'react';
 
 function LinuxChecklist(){
     return(
-<div class="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
-    <div class="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
+<div className="mt-5 m-auto p-5 w-4/5 text-dark bg-bg-gray rounded-lg dark:text-bg-gray dark:bg-navy">
+    <div className="lg:w-4/5 sm:w-7/8 mr-auto ml-auto">
     <div>
-        <h1 class="font-bold text-center">Linux Checklist</h1>
+        <h1 className="font-bold text-center">Linux Checklist</h1>
     </div>
-    <div class="m-auto pt-5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
+    <div className="m-auto pt-5 text-dark bg-bg-gray rounded-lg text-center dark:text-bg-gray dark:bg-navy">
         <p>In Collegiate Cyber Defense Competitions (CCDC), a team of defenders must protect a network from the intrusions of an active red team. They must simultaneously secure their systems and keep scored services like websites and databases online. During the competition, simulated employers will bring business tasks to the team of defenders who must carry out the business instructions. This is a generic *nix Checklist to guide those defensive efforts.
         </p>
 
-        <h1 class="text-lg font-bold">Capture Initial State of the Machine</h1>
+        <h1 className="text-lg font-bold">Capture Initial State of the Machine</h1>
         <ol>
-            <li class="text-left">ps -auxf {'>'} /root/ps.list</li>
+            <li className="text-left">ps -auxf {'>'} /root/ps.list</li>
             <li>lsmod {'>'} mod.list</li>
             <li>cat /etc/passwd {'>'} users.list</li>
         </ol>
 
-        <h1 class="text-lg font-bold">Handle Root</h1>
+        <h1 className="text-lg font-bold">Handle Root</h1>
         <p>Root is the most powerful basic user on a Linux computer and needs to be secured as soon as possible to prevent attackers from abusing its privileges</p>
         <p>passwd</p>
         <p>Change root password</p>

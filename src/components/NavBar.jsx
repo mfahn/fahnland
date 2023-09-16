@@ -1,164 +1,122 @@
 import React, { useEffect, useState } from 'react';
-import '../App.css';
 import { Link } from 'react-router-dom';
+import { BsFillCaretDownFill, BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { ImHome } from 'react-icons/im';
 import CampDropdown from './pages/camp/CampDropdown';
 import ChecklistDropdown from './pages/infosec/InfoSecDropdown';
 import EssayDropdown from './pages/essay/EssayDropdown';
 import ProjectDropdown from './pages/project/ProjectDropdown';
-import { BsFillCaretDownFill, BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
-import { GiHamburgerMenu } from 'react-icons/gi';
+import Religion from './pages/religion/Religion';
+import Home from './Home';
 
 function NavBar() {
-    const [theme, setTheme] = useState(null);
-    const [navbar, setNavbar] = useState(false);
-    useEffect(() => {
-        if(window.matchMedia('(prefers-color-scheme: dark)').matches){
-            setTheme('dark');
-        } else {
-            setTheme('light');
-        }
-    }, [])
+  const [theme, setTheme] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [isBurgerActive, toggleBurger] = useState(false);
 
-    useEffect(()=>{
-        if(theme === "dark"){
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    }, [theme]);
-
-    const handleThemeSwitch = () => {
-        setTheme(theme === "dark" ? "light": "dark");
-    };
-
-    const [click, setClick] = useState(false);
-    const handleClick = () => setClick(!click);
-    const [campDropdown, setCampDropdown] = useState(false);
-    const [checklistDropdown, setChecklistDropdown] = useState(false);
-    const [essayDropdown, setEssayDropdown] = useState(false);
-    const [projectDropdown, setProjectDropdown] = useState(false);
-
-    const onCampMouseEnter = () => {
-        if(window.innerWidth < 860){
-            setCampDropdown(false);
-        } else{
-            setCampDropdown(true);
-        }
+  useEffect(() => {
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
     }
-    const onCampMouseLeave = () => {
-        if(window.innerWidth < 860){
-            setCampDropdown(false);
-        } else{
-            setCampDropdown(false);
-        }
-    }
+  }, []);
 
-    const onChecklistMouseEnter = () => {
-        if(window.innerWidth < 860){
-            setChecklistDropdown(false);
-        } else{
-            setChecklistDropdown(true);
-        }
-    }
-    const onChecklistMouseLeave = () => {
-        if(window.innerWidth < 860){
-            setChecklistDropdown(false);
-        } else{
-            setChecklistDropdown(false);
-        }
-    }
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
 
-    const onEssayMouseEnter = () => {
-        if(window.innerWidth < 860){
-            setEssayDropdown(false);
-        } else{
-            setEssayDropdown(true);
-        }
-    }
-    const onEssayMouseLeave = () => {
-        if(window.innerWidth < 860){
-            setEssayDropdown(false);
-        } else{
-            setEssayDropdown(false);
-        }
-    }
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
-    const onProjectMouseEnter = () => {
-        if(window.innerWidth < 860){
-            setProjectDropdown(false);
-        } else{
-            setProjectDropdown(true);
-        }
-    }
-    const onProjectMouseLeave = () => {
-        if(window.innerWidth < 860){
-            setProjectDropdown(false);
-        } else{
-            setProjectDropdown(false);
-        }
-    }
+  const burgerActive = () => {
+    toggleBurger(!isBurgerActive);
+  }
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
-    const closeMobileMenu = () => setClick(false);
-    const windowMode = () => {
-        if(window.innerWidth < 860){
-            document.getElementById("navbar").document.documentElement.classList.add("hidden")
-        }
-    }
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
 
-    return (
-<>
-<div className='navbar' class='text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5 bg-bg-gray dark:bg-navy rounded-lg'>
-    <div id="navbar" class="sm:hidden" className={click ? 'nav-menu active' : 'nav-menu'}>
+  const handleDropdown = (dropdownName) => {
+    setActiveDropdown(dropdownName);
+  };
 
-        <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div><Link to='/' className='navbar-home'>Home</Link></div>
-        </div>
-
-        <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <button className='nav-item' onMouseEnter={onCampMouseEnter} onMouseLeave={onCampMouseLeave} onTouchStart={setCampDropdown}>
-                <div className='nav-links'>Traveling<BsFillCaretDownFill class='inline-block'/></div>
-                {campDropdown && <CampDropdown />}
+  return (
+    <div className={`navbar ${theme === "dark" ? "dark dark:text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5" : "text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5"}`}>
+      <div className={`navbar-content ${window.innerWidth > 400 ? 'inline-block text-center ml-1 p-1 dark:hover:ring-offset-midTeal bg-bg-gray dark:bg-navy rounded-lg' : 'hidden'}`}>
+        
+        <Link to='/' className='navbar-home inline-block'><ImHome size={25}/></Link>
+        
+        {[
+          { name: 'Traveling', component: <CampDropdown /> },
+          { name: 'InfoSec', component: <ChecklistDropdown /> },
+          { name: 'Essays', component: <EssayDropdown /> },
+          { name: 'Projects', component: <ProjectDropdown /> },
+        ].map((dropdown, index) => (
+          <div className="inline-block ml-1 p-1 dark:hover:ring-offset-midTeal bg-bg-gray dark:bg-navy rounded-lg">
+            <button
+              key={index}
+              className='nav-item'
+              onMouseEnter={() => handleDropdown(dropdown.name)}
+              onMouseLeave={() => handleDropdown(null)}
+            >
+            <div className='nav-links inline-block ml-1 p-1 dark:hover:ring-offset-midTeal'>{dropdown.name}<BsFillCaretDownFill className='inline-block' />
+            </div>
+            {!isMobileMenuOpen && activeDropdown === dropdown.name ? dropdown.component : null}
             </button>
-        </div>
+          </div>
+        ))}
 
-        <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <button className='nav-item' onMouseEnter={onChecklistMouseEnter} onMouseLeave={onChecklistMouseLeave} onTouchStart={setChecklistDropdown}>
-                <div className='nav-links'>InfoSec<BsFillCaretDownFill class='inline-block'/></div>
-                {checklistDropdown && <ChecklistDropdown />}
-            </button>
-        </div>
+        <Link to='/religion' className='navbar-religion inline-block ml-1 p-1 dark:hover:ring-offset-midTeal'>Religion</Link>
 
-        <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <button className='nav-item' onMouseEnter={onEssayMouseEnter} onMouseLeave={onEssayMouseLeave} onTouchStart={setEssayDropdown}>
-                <div className='nav-links'>Essays<BsFillCaretDownFill class='inline-block'/></div>
-                {essayDropdown && <EssayDropdown />}
-            </button>
+        <div className='theme-toggle inline-block pt-1 p-1'>
+          <button onClick={handleThemeSwitch}>
+            {theme === "dark" ? <BsFillSunFill size={25} /> : <BsMoonStarsFill size={25} />}
+          </button>
         </div>
+      </div>
 
-        <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <button className='nav-item' onMouseEnter={onProjectMouseEnter} onMouseLeave={onProjectMouseLeave} onTouchStart={setProjectDropdown}>
-                <div className='nav-links'>Projects<BsFillCaretDownFill class='inline-block'/></div>
-                {projectDropdown && <ProjectDropdown />}
-            </button>
+      {isMobileMenuOpen && (
+        <div className={`mobile-dropdowns ${window.innerWidth > 400 ? 'hidden' : 'text-lowTeal bg-bg-gray dark:bg-navy text-center mt-2 text-md ml-auto mr-auto w-1/5 grid grid-cols-1'}`}>
+        <div className='hamburger-menu'>
+          <button onClick={toggleMobileMenu}>
+          {window.innerWidth < 400 && isMobileMenuOpen ? null : <GiHamburgerMenu className="inline-block text-lowTeal" size={25} />}
+          </button>
         </div>
+          <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">
+            <Home />
+          </div>
+          <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">
+            <CampDropdown />
+          </div>
+          <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">
+            <ChecklistDropdown />
+          </div>
+          <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">
+            <EssayDropdown />
+          </div>
+          <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">
+            <ProjectDropdown />
+          </div>
+          <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">
+            <Religion />
+          </div>   
+        </div>
+      )}
 
-        <div class="inline-block ml-1 p-2 dark:hover:ring-offset-midTeal">
-            <div><Link to='/religion' className='navbar-religion'>Religion</Link></div>
-        </div>
-
-        <div class="ml-1 p-2 dark:hover:ring-offset-midTeal inline-block dark:hidden">
-            <button onClick={handleThemeSwitch}><BsMoonStarsFill size={25}/></button>
-        </div>
-
-        <div class="ml-1 p-2 dark:hover:ring-offset-midTeal hidden dark:inline-block">
-            <button onClick={handleThemeSwitch}><BsFillSunFill size={25}/></button>
-        </div>
+      <div className={`hamburger-menu ${window.innerWidth > 400 ? 'hidden' : 'inline-block bg-lowTeal dark:bg-lowTeal'}`}>
+        <button onClick={toggleMobileMenu}>
+          <GiHamburgerMenu size={25} />
+        </button>
+      </div>
     </div>
-
-
-   </div>
-</>
-    );
+  );
 }
 
 export default NavBar;

@@ -54,7 +54,8 @@ module.exports = {
   webpack: {
     headers: {
       'X-Frame-Options': 'Deny',
-      'X-Content-Type-Options': 'nosniff'
+      'X-Content-Type-Options': 'nosniff',
+      'Content-Type': 'text/html'
     },
   },
 };
