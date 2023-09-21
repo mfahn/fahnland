@@ -65,6 +65,8 @@ function NavBar() {
               className='nav-item'
               onMouseEnter={() => handleDropdown(dropdown.name)}
               onMouseLeave={() => handleDropdown(null)}
+              onTouchStart={() => handleDropdown(dropdown.name)}
+              onTouchEnd={() => handleDropdown(null)}
             >
             <div className='nav-links inline-block ml-1 p-1 dark:hover:ring-offset-midTeal'>{dropdown.name}<BsFillCaretDownFill className='inline-block' />
             </div>

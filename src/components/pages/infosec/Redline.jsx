@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../App.css';
-import activeConnection from '../../images/incident-response/activeConnections.png';
-import droppedFiles from '../../images/incident-response/droppedFiles.png';
-import scheduledTasks from '../../images/incident-response/scheduledTasks.png';
-import registryKeys from '../../images/incident-response/registryKeys.png';
-import taskManager from '../../images/incident-response/taskManager.png';
-import trigger from '../../images/incident-response/trigger.png';
-import samples from '../../images/incident-response/samples.png';
+import activeConnection from '../../images/classIR/activeConnections.png';
+import droppedFiles from '../../images/classIR/droppedFiles.png';
+import scheduledTasks from '../../images/classIR/scheduledTasks.png';
+import registryKeys from '../../images/classIR/registryKeys.png';
+import taskManager from '../../images/classIR/taskManager.png';
+import trigger from '../../images/classIR/trigger.png';
+import samples from '../../images/classIR/samples.png';
 
 function Redline() {
     return (
@@ -27,7 +27,7 @@ function Redline() {
   <h1 className="text-lg font-bold text-center">Environment</h1>
 
 <p className="text-base text-dark dark:text-bg-gray">
-  When the Redline tool executes, it performs a battery of tasks to search for malicious behavior, including recursively searching the filesystem for files to scan for malicious attributes, collecting registry artifacts, capturing memory, listing services and running processes, and indexing APIs. I used this lab as an opportunity to experiment with live malware samples to discover the Indicators of Compromise that I might encounter in a live incident response engagement. Instead of running the tool on my local system, I installed Redline on a virtual machine on my Proxmox server that I used previously for other classNamees, including reverse engineering. It was never used for any sensitive tasks but had enough other activity to simulate a real computer. The virtual machine was logically separated from other virtual machines and devices with a Virtual Local Area Network on a firewall. It was given network access.
+  When the Redline tool executes, it performs a battery of tasks to search for malicious behavior, including recursively searching the filesystem for files to scan for malicious attributes, collecting registry artifacts, capturing memory, listing services and running processes, and indexing APIs. I used this lab as an opportunity to experiment with live malware samples to discover the Indicators of Compromise that I might encounter in a live incident response engagement. Instead of running the tool on my local system, I installed Redline on a virtual machine on my Proxmox server that I used previously for other classes, including reverse engineering. It was never used for any sensitive tasks but had enough other activity to simulate a real computer. The virtual machine was logically separated from other virtual machines and devices with a Virtual Local Area Network on a firewall. It was given network access.
 </p> 
  
   <h1 className="text-lg font-bold text-center">Methodology</h1>

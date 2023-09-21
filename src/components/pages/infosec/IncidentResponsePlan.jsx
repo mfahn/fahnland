@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../App.css';
-import raciChart from '../../images/incident-response/raciChart.png';
+import raciChart from '../../images/classIR/raciChart.png';
 
 function IncidentResponsePlan() {
     return (
