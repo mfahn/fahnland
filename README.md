@@ -1,6 +1,6 @@
 # Fahn Land
 
-This website is the product of several years of inconsistent work. It is one of the first websites of its kind because it uses dropdowns integrated with the latest version of ReactRouter. I had the hardest time finding tutorials to make everything work together, so feel free to copy the structure.
+This website is the product of several years of inconsistent work. It uses dropdowns integrated with the latest version of ReactRouter. I had the hardest time finding tutorials to make everything work together, so feel free to copy the structure.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
