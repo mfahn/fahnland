@@ -9,12 +9,12 @@ import EssayDropdown from './pages/essay/EssayDropdown';
 import ProjectDropdown from './pages/project/ProjectDropdown';
 import Religion from './pages/religion/Religion';
 import Home from './Home';
+import InfoSecDropdown from './pages/infosec/InfoSecDropdown';
 
 function NavBar() {
   const [theme, setTheme] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [isBurgerActive, toggleBurger] = useState(false);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -32,15 +32,8 @@ function NavBar() {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
-  const burgerActive = () => {
-    toggleBurger(!isBurgerActive);
-  }
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
   };
 
   const handleDropdown = (dropdownName) => {
@@ -49,13 +42,13 @@ function NavBar() {
 
   return (
     <div className={`navbar ${theme === "dark" ? "dark dark:text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5" : "text-lowTeal text-center mt-2 text-2xl ml-auto mr-auto w-4/5"}`}>
-      <div className={`navbar-content ${window.innerWidth > 400 ? 'inline-block text-center ml-1 p-1 dark:hover:ring-offset-midTeal bg-bg-gray dark:bg-navy rounded-lg' : 'hidden'}`}>
+      <div className='inline-block text-center ml-1 p-1 dark:hover:ring-offset-midTeal bg-bg-gray dark:bg-navy rounded-lg'>
         
         <Link to='/' className='navbar-home inline-block'><ImHome size={25}/></Link>
         
         {[
           { name: 'Traveling', component: <CampDropdown /> },
-          { name: 'InfoSec', component: <ChecklistDropdown /> },
+          { name: 'InfoSec', component: <InfoSecDropdown /> },
           { name: 'Essays', component: <EssayDropdown /> },
           { name: 'Projects', component: <ProjectDropdown /> },
         ].map((dropdown, index) => (
@@ -66,11 +59,10 @@ function NavBar() {
               onMouseEnter={() => handleDropdown(dropdown.name)}
               onMouseLeave={() => handleDropdown(null)}
               onTouchStart={() => handleDropdown(dropdown.name)}
-              onTouchEnd={() => handleDropdown(null)}
             >
             <div className='nav-links inline-block ml-1 p-1 dark:hover:ring-offset-midTeal'>{dropdown.name}<BsFillCaretDownFill className='inline-block' />
             </div>
-            {!isMobileMenuOpen && activeDropdown === dropdown.name ? dropdown.component : null}
+            {activeDropdown === dropdown.name ? dropdown.component : null}
             </button>
           </div>
         ))}
@@ -85,10 +77,10 @@ function NavBar() {
       </div>
 
       {isMobileMenuOpen && (
-        <div className={`mobile-dropdowns ${window.innerWidth > 400 ? 'hidden' : 'text-lowTeal bg-bg-gray dark:bg-navy text-center mt-2 text-md ml-auto mr-auto w-1/5 grid grid-cols-1'}`}>
+        <div className='text-lowTeal bg-navy dark:bg-navy text-center mt-2 text-md ml-auto mr-auto w-1/5 grid grid-cols-1'>
         <div className='hamburger-menu'>
           <button onClick={toggleMobileMenu}>
-          {window.innerWidth < 400 && isMobileMenuOpen ? null : <GiHamburgerMenu className="inline-block text-lowTeal" size={25} />}
+          <GiHamburgerMenu className="inline-block text-lowTeal" size={25} />
           </button>
         </div>
           <div className="dark:text-lowTeal text-lowTeal text-center mt-2 ml-auto mr-auto">

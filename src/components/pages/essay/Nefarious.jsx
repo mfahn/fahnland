@@ -37,7 +37,7 @@ function Nefarious() {
       This raises a question about whether that is a good thing since confession done out of fear does not involve genuine contrition for sins and rather a sense of preservation for self, but I suppose only God knows what goes on in the soul. I personally think that this movie has merit in that area.
   </p>
   <p className="text-sm text-dark dark:text-bg-gray p-5">
-    <Link className='text-lowTeal underline hover:text-midTeal'>The Exorcist Files</Link> is an excellent podcast on Spotify that describe some of the more memorable excorcists that a Catholic priest has unertaken. They include Catholic theology and have religious merit, but one should be cautious not to seek to acquiant oneself too intimately with demonic powers.
+    <Link className='text-lowTeal underline hover:text-midTeal'>The Exorcist Files</Link> is an excellent podcast on Spotify that describe some of the more memorable excorcists that a Catholic priest has unertaken. They include Catholic theology and have religious merit, but one should be cautious not to seek to acquiant oneself too intimately with demonic powers. 
     </p>
   </div>
 </div>

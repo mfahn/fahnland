@@ -31,6 +31,7 @@ import UV from '../../images/computerIR/UltraViewer.png';
 import UVNCLog from '../../images/computerIR/UVNCLog.png';
 import Wifi from '../../images/computerIR/WiFi.png';
 import WinSec from '../../images/computerIR/WindowsSecurity.png';
+import Attackprog from '../../images/computerIR/AttackProg.png';
 
 function Incident() {
     return (
@@ -80,14 +81,13 @@ function Incident() {
     </div>
 
     <div className="text-lg font-bold text-center text-dark dark:text-bg-gray">Incident Reconstruction</div>
-
-    <div>
+    <div className="p-5 text-dark dark:text-bg-gray">
       We have a few important things going for us: first, we know that the computer was not accessed or run after the intrusion. Therefore, in the timeline, we will know the day of the first activity is the date immediately before the day I started it and ran tools. We can then narrow our search in the logs to that period of time first. Once we find some artifacts of value, we can look at later logs for similar activity.
-      </div>
-      <img className='text-center' src={InitialDate} alt="" title="Initial Date of Compromise"></img>
+    </div>
+    <img className='text-center' src={InitialDate} alt="" title="Initial Date of Compromise"></img>
 
-      <div>
-        Unfortunately, the Redline logs show that the computer was started 8 times after the start of the incident, so the previous idea to narrow the search based on that date will no longer work. For purposes of this investigation, we are assuming no timestomping has been done, especially because we do not have a forensic image of the computer that would contain the actual Windows logs not accessible to a tool that runs ontop of the OS.How do I know the date of the incident and that it was started approximately? Well, I sort of cheated while I was waiting for the Redline Scan to finish and poked around the computer and made some interesting findings.
+    <div className="p-5 text-dark dark:text-bg-gray">
+      Unfortunately, the Redline logs show that the computer was started 8 times after the start of the incident, so the previous idea to narrow the search based on that date will no longer work. For purposes of this investigation, we are assuming no timestomping has been done, especially because we do not have a forensic image of the computer that would contain the actual Windows logs not accessible to a tool that runs ontop of the OS. How do I know the date of the incident and that it was started approximately 8 times after? Well, I sort of cheated while I was waiting for the Redline Scan to finish by poking around the computer and made some interesting findings.
     </div>
 
     <div className="p-5 text-dark dark:text-bg-gray">
@@ -106,7 +106,7 @@ function Incident() {
       Oh thank goodness, Webroot SecureAnywhere is protecting us! I had to do a quick search to see if it was a real antivirus, and sure enough, it does exist and is in fact an antivirus.
     </div>
     
-    <div>
+    <div className="p-5 text-dark dark:text-bg-gray">
       I wondered if these tools were recent additions or if they had been with the user for the long haul. I meandered to the Downloads folder, and made some more discoveries.
     </div>
     <img className='text-center' src={Downloads} alt="" title="Downloads"></img>
@@ -162,7 +162,7 @@ function Incident() {
 
     <img className='text-center' src={TaskMgr} alt="" title="Task Manager"></img>
     <div className="p-5 text-dark dark:text-bg-gray">
-      Speaking of remote access software, it appears UltraViewer starts on boot. This could allow an attacker to remotely access the computer. The attacker seems to have forgotten about this one, since they did not connect to it after the day of the incident.
+      Speaking of remote access software, it appears UltraViewer starts on boot. This could allow an attacker to remotely access the computer. The attacker seems to have forgotten about this ability, since they did not connect to it after the day of the incident. This makes me think that the purpose of the attack was not prolonged access, but rather social engineering.
     </div>
 
     <img className='text-center' src={Autoruns1} alt="" title="Autoruns1"></img>
@@ -177,14 +177,25 @@ function Incident() {
     <div className="p-5 text-dark dark:text-bg-gray">
       Comodo Cleaning Essentials found a single piece of malware in the form of a malicious registry entry. It categorizes the registry as a rootkit. We will check that entry against the Redline findings to see if there is related activity. Unfortunately, that registry key was nowhere to be found in the Redline extraction.
     </div>
+
+    <div className="text-lg font-bold text-center">Redline Findings</div>
     <div className="p-5 text-dark dark:text-bg-gray">
-      
+      It took a lot of narrowing down in Redline. There were over 4 million events that the tool collected from the computer only during the day of the incident, to say nothing of the time before and after. I searched for the registry keys referenced in Autoruns and Comodo Cleaner, but I could not find them. It is possible that I was not searching correctly, but it also seemed that I could not list multiple search criteria, even when using regex. The Redline browser data itself seemed pretty benign, email, checking payslips from work, YouTube, checking the Lottery, until a wetransfer link that downloaded a zip file caught my attention. Attackers love to serve malware on anonymous fileshare platforms like Wetransfer. That link was intermixed with banking sessions, but it is hard to tell from the surrounding searches and data if it is malicious or benign. It appears he spent some time looking in his junk mail folder, perhaps for a login code. After extracting the files from the wetransfer link, it is most certainly benign. It was also downloaded before the VNC software was downloaded, which I believe to be the first sign of trouble. 
     </div>
+    <div className="p-5 text-dark dark:text-bg-gray">
+      As a total aside, Redline, and more specifically browsers, collected detailed information about users, including every form you have ever entered. In the Redline data, I saw names, phone numbers, addresses, hashed passwords, and URLs to pair that data to.
+    </div>
+
+    <img className='text-center' src={Attackprog} alt="" title="Attack Progression"></img>
+    <div className="p-5 text-dark dark:text-bg-gray">
+      This image clearly shows the attack progression. Note that (as of now) the IP address does not contain malicious links, popups, or malware anymore, but I would not recommend visiting that site unless precautions are taken.
+    </div>
+
     <div>
       <Link className="dark:text-lowTeal text-lowTeal text-center dark:hover:text-teal" to="https://www.sans.org/tools/get-zimmermantools/">Zimmerman Tools Download Script</Link>
     </div>
     <div>
-      Zimmerman Tools is a collection of forensic tools that incident responders might find helful for figuring out how a compromise happened.
+      Zimmerman Tools is a collection of forensic tools that incident responders might find helful for figuring out how a compromise happened. If you are interested in doing a project like this, this toolset is a solid starting point.
     </div>
 
     <div className="text-lg font-bold text-center">Network Findings</div>
@@ -199,7 +210,7 @@ function Incident() {
       Unfortunately, this type of story is all too common and is nothing to laugh at since people have lost their life savings from such scams. In this case, my friend's parents were able to lock down their accounts before anything could be stolen from them.
     </div>
     <div className="p-5 text-dark dark:text-bg-gray">
-      Here are some tips to be safer online and help you avoid the situation where hackers get your financial information. First, don't be afraid of strange popups while you are using a browser like Chrome or Firefox. Many malicious websites want you to think you've been compromised by showing popups that say you have malware on your computer. More than likely, you have not been compromised yet but they want you to download a virus to “fix it”. Back in the day, malware used to be able to take advantage of vulnerabilities in browsers using malware called Exploit Kits. As internet browsers have gotten more secure over time (and Flash has been widely discontinued for being a major security liability), these have grown increasingly rare. The big thing to watch out for is downloads. Many times, those popups that tell you to click them will download a malicious file. Even at this stage, you have not yet been compromised and although having malware on your computer is super risky, it can't hurt you unless it is executed or run. You can avoid those popups by downloading a browser extension like Ad Block Plus, uBlock Origin, or Ghostery to prevent those from annoying you (they have the added bonus of blocking ads on Youtube and other websites!). Be careful, however, because browser extensions are another common avenue for attackers as many malicious extensions can contain spyware, or software that monitors your activity. Malicious extensions can also greatly increase popups, so be sure that they come from the Chrome browser store.
+      Here are some tips to be safer online and help you avoid the situation where hackers get your financial information. First, don't be afraid of strange popups while you are using a browser like Chrome or Firefox. Many malicious websites want you to think you've been compromised by showing popups that say you have malware on your computer. More than likely, you have not been compromised yet but they want you to download a virus to “fix it”. Back in the day, malware used to be able to take advantage of vulnerabilities in browsers using malware called Exploit Kits. As internet browsers have gotten more secure over time (and Flash has been widely discontinued for being a major security liability), these have grown increasingly rare. Therefore, hackers need you to download and run a file or connect to your computer to copmromise you. The big thing to watch out for is downloads. Many times, those popups that tell you to click them will download a malicious file. Even at this stage, you have not yet been compromised and although having malware on your computer is super risky, it can't hurt you unless it is executed or run. You can avoid those popups by downloading a browser extension like Ad Block Plus, uBlock Origin, or Ghostery to prevent those from annoying you (they have the added bonus of blocking ads on Youtube and other websites!). Be careful, however, because browser extensions are another common avenue for attackers as many malicious extensions can contain spyware, or software that monitors your website activity. Malicious extensions can also spam you with malicious popups, so be sure that they come from a reputable source like the Chrome store.
     </div>
     <img className="text-center m-auto" src={Warning} alt="" title="Browser Warning"></img>
     <div className="p-5 text-dark dark:text-bg-gray">
@@ -211,4 +222,4 @@ function Incident() {
     );
 }
 
-export default Incident
+export default Incident;

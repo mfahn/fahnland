@@ -742,10 +742,6 @@ video {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-.justify-self-center {
-  justify-self: center;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -767,6 +763,11 @@ video {
 .bg-lowTeal {
   --tw-bg-opacity: 1;
   background-color: rgb(56 125 122 / var(--tw-bg-opacity));
+}
+
+.bg-navy {
+  --tw-bg-opacity: 1;
+  background-color: rgb(33 45 64 / var(--tw-bg-opacity));
 }
 
 .p-1 {
@@ -943,6 +944,11 @@ video {
 :is(.dark .dark\:ring-lowTeal) {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(56 125 122 / var(--tw-ring-opacity));
+}
+
+:is(.dark .dark\:hover\:text-bg-gray:hover) {
+  --tw-text-opacity: 1;
+  color: rgb(243 244 246 / var(--tw-text-opacity));
 }
 
 :is(.dark .dark\:hover\:text-lowTeal:hover) {
