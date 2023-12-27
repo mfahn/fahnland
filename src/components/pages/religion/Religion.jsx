@@ -32,7 +32,7 @@ function Religion() {
         <div className="text-center">
             <Link className="ring ring-lowTeal hover:ring-lowTeal hover:text-lowTeal text-lg font-bold dark:ring dark:ring-lowTeal dark:hover:ring-midTeal dark:hover:text-teal" to="http://www.carloacutis.com/en/association/presentazione">Blessed Carlos Acutis</Link>
         </div>
-        <div className="text-base pt-5">
+        <div className='text-dark dark:text-bg-gray pt-2'>
             This link tells the story of the life of Blessed Carlos Acutis, a 21st century web developer who battled cancer as a teenager but used his talents to serve God by bringing centuries of miracles into a globally accessible website. He has been declared Blessed by the Catholic Church, which is the last step before being declared a saint, or recognized as someone who is in heaven.
         </div>
     </div>
@@ -40,24 +40,25 @@ function Religion() {
         <div className="text-center">
             <Link className="ring ring-lowTeal hover:ring-lowTeal hover:text-lowTeal text-lg font-bold dark:ring dark:ring-lowTeal dark:hover:ring-midTeal dark:hover:text-teal" to="http://www.therealpresence.org/">Catholic Resource</Link>
         </div>
-        <div className="text-base pt-5">
+        <div className='text-dark dark:text-bg-gray pt-2'>
             This website contains many resources such as the Biblical backing for the Holy Eucharist, angelic apparitions, and fundemental truths of the Catholic Church. Some of these apparitions even occurred in the 20th Century with tens of thousands of eye witnesses like in the case of the Miracle of Fatima.
         </div>
     </div>
     
     <div className="ring-dark p-2">
         <Link to='https://www.amazon.com/Report-Shroud-Turin-John-Heller/dp/0395339677/ref=sr_1_1?crid=3550ENHFISTR0&keywords=report+on+the+shroud+of+turin&qid=1698109633&sprefix=report+on+the+sh%2Caps%2C103&sr=8-1'><img className="text-center m-auto" src={Shroud} alt="" title="Shroud"></img></Link>
-        <div className="text-base pt-5">
-        This entry is a little different: instead of a website, this is a book review of the Shroud of Turin, by Dr. John Heller. In it, he details a Herculean effort by 40 distinguished scientists in the 1970's to rigorously study the Shroud of Turin using the best technology available at the time. The Shroud is the cloth in which Jesus Christ was supposedly buried after his death and is a crucial piece of evidence of His resurrection. Plenty of evidence exists that Jesus was a legitimate historical figure, particularly the writings of several Roman historians, but Christians maintain that this cloth is His burial cloth. This group of scientists from highly respected agencies such as the Jet Propulsion Laboratory, _____, _____, created tests to challenge a wide range of claims. The group independently assembled scientific equipment, organized travel for themselves and shipping for their equipment, and lodging to study this cloth over a period of a few days. They all did this in their spare time and at substantial personal cost to obtain a scientifically definitive answer about the cloth's legitimacy. Not to spoil the book, but their findings were incredible and impossible. Most of the scientists were a-religious at the time of study and their main interest was in disproving once and for all the narrative that the Shroud of Turin is the burial cloth of Jesus Christ. 
+        <div className='text-dark dark:text-bg-gray pt-2'>
+        This entry is a little different: instead of a website, this is a book review of the Shroud of Turin, by Dr. John Heller. In it, he details a Herculean effort by 40 distinguished scientists in the 1970's to rigorously study the Shroud of Turin using the best technology available at the time. The Shroud is the cloth in which Jesus Christ was supposedly buried after his death and is a crucial piece of evidence of His resurrection. The historical record contains plenty of evidence that Jesus was a legitimate historical figure, particularly the writings of Roman historians such as Cornelius Tacitus, Pliny the Younger, and Jewish historian Flavius Josephus, but Christians maintain that this cloth is His burial cloth despite all the centuries it would have had to survive. This group of scientists from highly respected agencies such as the Jet Propulsion Laboratory, _____, _____, created tests to challenge a wide range of claims. The group independently assembled scientific equipment, organized travel for themselves and shipping for their equipment, and lodging to study this cloth over a period of a few days. They all did this in their spare time and at substantial personal cost to obtain a scientifically definitive answer about the cloth's legitimacy. Not to spoil the book, but their findings were incredible and impossible. Most of the scientists were a-religious at the time of study and their main interest was in disproving once and for all the narrative that the Shroud of Turin is the burial cloth of Jesus Christ. 
         </div>
-        <div>
+        <div className='text-dark dark:text-bg-gray pt-2'>
             One of the reasons for the emphasis on the Shroud of Turin is that it is a physical object whose existence is inexplicable by science analysis. 
         </div>
-        <div>
-            Maybe buying and reading the book for yourself is too much work, so here is a shorter synopsis of the research conducted on the Shroud in PDF form. <a href="Science-and-the-Shroud.pdf" target="_blank" rel="noopener noreferrer" className="text-lowTeal hover:text-midTeal font-bold dark:text-lowTeal dark:hover:text-teal">This</a> is the link to a study of the Shroud of Turin published in December of 2022.
+        <div className='text-dark dark:text-bg-gray pt-2'>
+            Maybe buying and reading the book for yourself is too much work, so here is a shorter synopsis of the research conducted on the Shroud in PDF form. <a href="Science-and-the-Shroud.pdf" target="_blank" rel="noopener noreferrer" className="text-lowTeal hover:text-midTeal font-bold dark:text-lowTeal dark:hover:text-teal">This</a> is the link to a study of the Shroud of Turin published in December of 2022. I intended to copy the titles of many of the papers that were written during this endeavor, but all of them are already documented on the website <Link className='text-midTeal hover:text-teal underline' to={'Shroud.com'}>shroud.com</Link>. Most of the papers are published in distinguished journals like IEEE.
         </div>
-        <div>
-            Certainly the existence of the Shroud of Turin does not directly prove that Jesus rose from the dead like the Bible claims, but one must ask how many pieces of indirect evidence must be provided before the eye witness testimony of the original Apostles is to be believed.
+        <div className='text-dark dark:text-bg-gray pt-2'>
+            Perhaps the existence of the Shroud of Turin does not directly prove that Jesus rose from the dead like the Bible claims. However, it does portray a man with injuries consistent with the horrible death that Jesus died, on a cloth dated to the time period of Jesus, containing various pollens consistent with vegetation in Israel, and maintaining the overall integrity of the image despite natural disasters like fires, building collapses, and being soaked with water. There is also the small matter of how a photo-negative image is transmitted to a piece of cloth with origins to the mid 1500's and itself dating back to the time period of Jesus.
+            One must ask how many pieces of indirect evidence must be provided before the eye witness testimony of the original Apostles is to be believed.
         </div>
     </div>
     </div>
