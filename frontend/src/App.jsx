@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import React from 'react';
+import { useEffect, useState } from 'react';
 import "./index.css";
 import Home from './components/Home';
 import NavBar from './components/NavBar';
@@ -25,11 +26,25 @@ import Nefarious from './components/pages/essay/Nefarious';
 import PussInBoots from './components/pages/essay/PussInBoots';
 
 function App() {
+  const [theme, setTheme] = useState('light');
 
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDarkMode ? 'dark' : 'light');
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.style.backgroundColor = theme === 'dark' ? '#11151c' : '#ffffff';
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
   return (
-<React.StrictMode>
+<div className={`App ${theme === 'dark' ? 'dark' : 'light'}`}>
+  <React.StrictMode>
   <Router>
-    <NavBar />
+    <NavBar handleThemeSwitch={handleThemeSwitch} />
     <Routes>
       <Route path='/' index exact element={<Home />} />
       <Route path='/camp/Glacier' exact element={<Glacier />} />
@@ -55,6 +70,8 @@ function App() {
   </Router>
   <Footer />
 </React.StrictMode>
+</div>
+
     );
 }
 

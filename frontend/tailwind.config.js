@@ -1,13 +1,11 @@
 const colors = require('tailwindcss/colors');
-const path = require("path");
 
 module.exports = {
-  mode:'jit',
+  mode: 'jit',
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{html,js,jsx}"
   ],
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
-  darkMode: 'class', // or 'media' or 'class'
+  darkMode: 'class',
   theme: {
     extend: {},
     listStyleType: {
@@ -18,22 +16,22 @@ module.exports = {
     },
     screens: {
       'sm': '640px',
-      // => @media (min-width: 640px) { ... }
-
       'md': '768px',
-      // => @media (min-width: 768px) { ... }
-
       'lg': '1024px',
-      // => @media (min-width: 1024px) { ... }
-
       'xl': '1280px',
-      // => @media (min-width: 1280px) { ... }
-
       '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
     },
     fontFamily: {
-      'body': 'font-serif',
+      'body': ['sans-serif'],
+    },
+    fontSize: {
+      'sm': '12px',
+      'base': '14px',
+      'xl': '16px',
+      '2xl': '20px',
+      '3xl': '28px',
+      '4xl': '38px',
+      '5xl': '50px',
     },
     colors: {
       'dark': '#11151c',
@@ -49,11 +47,4 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-  webpack: {
-    headers: {
-      'X-Frame-Options': 'Deny',
-      'X-Content-Type-Options': 'nosniff',
-      'Content-Type': 'text/html'
-    },
-  },
 };
