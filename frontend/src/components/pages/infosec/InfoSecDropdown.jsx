@@ -8,7 +8,7 @@ function InfoSecDropdown() {
 <ul>
     {InfoSecMenuItems.map((item,index) => {
         return (
-            <li className='bg-bg-gray dark:bg-navy dark:hover:text-bg-gray hover:text-midTeal text-lg p-1 px-2' key={index}>
+            <li className='bg-bg-gray dark:bg-navy dark:hover:text-bg-gray hover:text-midTeal text-xl p-1 px-2' key={index}>
                 <Link 
                 className={item.cName} 
                 to={item.path}
